@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import BrandLogos from "../components/BrandLogos.astro";
+import Services from "../components/Services.astro";
+import Stats from "../components/Stats.astro";
+import Portfolio from "../components/Portfolio.astro";
+import Testimonials from "../components/Testimonials.astro";
+import Community from "../components/Community.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Aquorix.digital | Creative Web Design & Development Agency">
+  <Navbar />
+  <main>
+    <Hero />
+    <BrandLogos />
+    <Services />
+    <Stats />
+    <Portfolio />
+    <Testimonials />
+    <Community />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  main {
+    width: 100%;
+    overflow-x: hidden;
+  }
+</style>

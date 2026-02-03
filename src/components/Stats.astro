@@ -1,0 +1,28 @@
+---
+const stats = [
+  { label: "Projects Completed", value: "220+" },
+  { label: "Happy Clients", value: "200+" },
+  { label: "Global Reach", value: "100K+" },
+];
+---
+
+<section class="py-24 border-b border-white/5">
+  <div class="container mx-auto px-6">
+    <div
+      class="grid grid-cols-2 md:grid-cols-3 gap-12 text-center md:text-left"
+    >
+      {
+        stats.map((stat) => (
+          <div class="group">
+            <h3 class="text-4xl md:text-6xl font-display font-medium mb-3 group-hover:text-accent transition-colors">
+              {stat.value}
+            </h3>
+            <p class="text-[10px] text-white/30 uppercase tracking-[0.2em] font-bold">
+              {stat.label}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

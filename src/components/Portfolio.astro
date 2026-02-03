@@ -1,0 +1,103 @@
+---
+const projects = [
+  {
+    title: "Nebula Platform",
+    category: "Product Design",
+    description: "Cloud management made simple and intuitive.",
+    image:
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1200",
+  },
+  {
+    title: "Quantum Analytics",
+    category: "Web Development",
+    description: "Data-driven insights for modern enterprises.",
+    image:
+      "https://images.unsplash.com/photo-1614850523296-e842407f6e0c?auto=format&fit=crop&q=80&w=1200",
+  },
+  {
+    title: "Aether Branding",
+    category: "Brand Identity",
+    description: "Defining the visual language of the future.",
+    image:
+      "https://images.unsplash.com/photo-1635336110753-3c22789f816c?auto=format&fit=crop&q=80&w=1200",
+  },
+  {
+    title: "Synth Dashboard",
+    category: "UI/UX Design",
+    description: "Complexity simplified through design.",
+    image:
+      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200",
+  },
+];
+---
+
+<section id="portfolio" class="py-32 bg-background">
+  <div class="container mx-auto px-6">
+    <div
+      class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8"
+    >
+      <div class="max-w-xl">
+        <p
+          class="text-accent text-xs font-bold uppercase tracking-[0.2em] mb-6"
+        >
+          Selected Works
+        </p>
+        <h2
+          class="text-4xl md:text-6xl font-display font-medium leading-tight tracking-tight"
+        >
+          Impactful <br />
+          <span class="text-white/40">digital solutions.</span>
+        </h2>
+      </div>
+      <div>
+        <a
+          href="#portfolio"
+          class="inline-flex items-center gap-2 group text-xs font-bold uppercase tracking-widest text-white/60 hover:text-accent transition-colors"
+        >
+          View all projects
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            class="group-hover:translate-x-1 transition-transform"
+            ><path d="M5 12h14M12 5l7 7-7 7"></path></svg
+          >
+        </a>
+      </div>
+    </div>
+
+    <!-- Portfolio Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
+      {
+        projects.map((project) => (
+          <a href="#portfolio" class="group block cursor-pointer">
+            <div class="aspect-16/10 rounded-3xl overflow-hidden bg-muted relative mb-8">
+              <img
+                src={project.image}
+                alt={project.title}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60 group-hover:opacity-80"
+              />
+              <div class="absolute inset-0 bg-linear-to-b from-transparent to-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-10">
+                <span class="px-6 py-3 rounded-full bg-accent text-background font-black text-[10px] uppercase tracking-widest">
+                  View Project
+                </span>
+              </div>
+            </div>
+
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="text-2xl font-display font-medium mb-3 group-hover:text-accent transition-colors">
+                  {project.title}
+                </h3>
+                <p class="text-sm text-white/40">{project.category}</p>
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

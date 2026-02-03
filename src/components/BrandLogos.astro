@@ -1,0 +1,49 @@
+---
+const brands = [
+  "Quantum",
+  "Nebula",
+  "Apex",
+  "Synth",
+  "Lumina",
+  "Vortex",
+  "Aether",
+];
+---
+
+<section class="py-16 border-y border-white/5 bg-background overflow-hidden">
+  <div class="flex items-center gap-24 whitespace-nowrap animate-scroll">
+    <div class="flex items-center gap-24 min-w-full">
+      {
+        brands.map((brand) => (
+          <span class="text-lg font-display font-medium text-white/10 hover:text-accent transition-colors uppercase tracking-[0.4em] cursor-default">
+            {brand}
+          </span>
+        ))
+      }
+    </div>
+    <div class="flex items-center gap-24 min-w-full">
+      {
+        brands.map((brand) => (
+          <span class="text-lg font-display font-medium text-white/10 hover:text-accent transition-colors uppercase tracking-[0.4em] cursor-default">
+            {brand}
+          </span>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .animate-scroll {
+    animation: scroll 60s linear infinite;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+</style>

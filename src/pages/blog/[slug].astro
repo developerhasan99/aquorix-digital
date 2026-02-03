@@ -1,0 +1,183 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+const { title, description, pubDate, image, category, author } = post.data;
+---
+
+<Layout title={`${title} | Aquorix.digital`}>
+  <Navbar />
+  <main class="pb-32">
+    <article>
+      <!-- Immersive Header -->
+      <header
+        class="py-24 md:pt-40 md:pb-20 border-b border-white/5 bg-muted/10"
+      >
+        <div class="container mx-auto px-6">
+          <div class="max-w-3xl mx-auto">
+            <div
+              class="flex items-center gap-4 mb-10 text-[10px] font-bold uppercase tracking-[0.3em] text-accent"
+            >
+              <span
+                class="px-3 py-1 bg-accent/10 border border-accent/20 rounded-full"
+                >{category}</span
+              >
+              <span class="w-1 h-1 rounded-full bg-white/20"></span>
+              <span class="text-white/30"
+                >{
+                  pubDate.toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })
+                }</span
+              >
+            </div>
+            <h1
+              class="text-5xl md:text-7xl font-display font-medium leading-tight tracking-tighter mb-12"
+            >
+              {title}
+            </h1>
+            <div class="flex items-center gap-6 py-8 border-t border-white/5">
+              <div
+                class="w-12 h-12 rounded-full bg-accent flex items-center justify-center text-background font-black text-xs"
+              >
+                {
+                  author
+                    .split(" ")
+                    .map((n) => n[0])
+                    .join("")
+                }
+              </div>
+              <div>
+                <p
+                  class="text-[10px] font-bold uppercase tracking-widest text-white/30 mb-1"
+                >
+                  Curated by
+                </p>
+                <p class="text-lg font-display font-medium text-white">
+                  {author}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Featured Image -->
+      <div class="container mx-auto px-6 -mt-16 md:-mt-24 mb-32 relative z-10">
+        <div
+          class="max-w-6xl mx-auto aspect-21/9 rounded-4xl overflow-hidden bg-muted border border-white/10 shadow-2xl shadow-black/50"
+        >
+          <img
+            src={image}
+            alt={title}
+            class="w-full h-full object-cover opacity-90"
+          />
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl mx-auto">
+          <div
+            class="prose prose-invert prose-2xl max-w-none
+            prose-headings:font-display prose-headings:font-medium prose-headings:tracking-tighter
+            prose-h2:text-4xl md:prose-h2:text-6xl prose-h2:mt-20 prose-h2:mb-10
+            prose-p:text-white/50 prose-p:leading-relaxed prose-p:text-lg md:prose-p:text-xl prose-p:mb-8 font-sans
+            prose-strong:text-white prose-strong:font-bold
+            prose-blockquote:border-l-4 prose-blockquote:border-accent prose-blockquote:bg-accent/5 prose-blockquote:py-8 prose-blockquote:px-10 prose-blockquote:rounded-r-2xl prose-blockquote:italic prose-blockquote:text-white/80
+            prose-a:text-accent prose-a:no-underline prose-a:border-b prose-a:border-accent/30 hover:prose-a:border-accent transition-all"
+          >
+            <Content />
+          </div>
+
+          <!-- Bottom Navigation & Sharing -->
+          <footer class="mt-40 pt-16 border-t border-white/5">
+            <div
+              class="flex flex-col md:flex-row justify-between items-center gap-12"
+            >
+              <a
+                href="/blog"
+                class="group flex items-center gap-6 py-4 px-8 rounded-full border border-white/5 hover:border-accent/40 hover:bg-accent/5 transition-all duration-500"
+              >
+                <div
+                  class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-accent group-hover:text-background group-hover:border-accent transition-all"
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    ><path d="M19 12H5M12 19l-7-7 7-7"></path></svg
+                  >
+                </div>
+                <span
+                  class="text-xs font-bold uppercase tracking-[0.2em] text-white/40 group-hover:text-white"
+                  >All Insights</span
+                >
+              </a>
+
+              <div class="flex items-center gap-10">
+                <span
+                  class="text-[10px] font-bold uppercase tracking-widest text-white/20"
+                  >Share:</span
+                >
+                <div class="flex gap-6">
+                  <a
+                    href="#"
+                    class="text-white/40 hover:text-accent transition-colors"
+                    ><svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      ><path
+                        d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.84 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                      ></path></svg
+                    ></a
+                  >
+                  <a
+                    href="#"
+                    class="text-white/40 hover:text-accent transition-colors"
+                    ><svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      ><path
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                      ></path></svg
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </article>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  main {
+    width: 100%;
+    overflow-x: hidden;
+  }
+</style>

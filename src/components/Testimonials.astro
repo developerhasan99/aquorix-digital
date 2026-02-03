@@ -1,0 +1,61 @@
+---
+const testimonials = [
+  {
+    name: "Alex Rivera",
+    role: "CEO, TechFlow",
+    content:
+      "Aquorix transformed our digital presence. Their minimalist approach is exactly what our brand needed.",
+  },
+  {
+    name: "Sarah Chen",
+    role: "Founder, Bloom",
+    content:
+      "Professional, creative, and highly impactful. They don't just design; they build value.",
+  },
+  {
+    name: "James Wilson",
+    role: "Marketing Director, Nexus",
+    content:
+      "A rare team that balances high-end aesthetics with technical excellence. Truly impressed.",
+  },
+];
+---
+
+<section
+  id="testimonials"
+  class="py-32 border-t border-white/5 bg-background overflow-hidden"
+>
+  <div class="container mx-auto px-6">
+    <div class="mb-24">
+      <p class="text-accent text-xs font-bold uppercase tracking-[0.2em] mb-6">
+        Testimonials
+      </p>
+      <h2
+        class="text-4xl md:text-6xl font-display font-medium leading-tight tracking-tight"
+      >
+        Trusted by <br />
+        <span class="text-white/40">forward-thinking brands.</span>
+      </h2>
+    </div>
+
+    <div
+      class="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 border border-white/5"
+    >
+      {
+        testimonials.map((t) => (
+          <div class="bg-background p-12 hover:bg-muted/30 transition-all duration-500 flex flex-col justify-between">
+            <p class="text-xl text-white/80 font-display font-light mb-12 leading-relaxed italic">
+              "{t.content}"
+            </p>
+            <div>
+              <h4 class="font-bold text-white mb-1">{t.name}</h4>
+              <p class="text-white/30 text-xs font-bold uppercase tracking-widest">
+                {t.role}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
