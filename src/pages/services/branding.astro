@@ -1,0 +1,195 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+---
+
+<Layout title="Branding | Aquorix.digital">
+  <Navbar />
+  <main>
+    <!-- Hero Section -->
+    <section
+      class="min-h-screen flex items-center pt-32 pb-20 relative overflow-hidden bg-background"
+    >
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-4xl">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 mb-10 bg-accent/10 rounded-full border border-accent/20"
+          >
+            <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+            <span
+              class="text-[9px] uppercase tracking-widest font-bold text-accent"
+              >Core Service</span
+            >
+          </div>
+          <h1
+            class="text-6xl md:text-[10rem] font-display font-medium leading-[0.85] tracking-tighter mb-12"
+          >
+            Building <br />
+            <span class="text-white/20">iconic</span>
+            <br />
+            <span class="italic font-display">identities.</span>
+          </h1>
+          <p
+            class="text-xl md:text-3xl text-white/40 leading-relaxed font-sans max-w-2xl"
+          >
+            We craft visual souls for businesses. Our branding goes beyond
+            aesthetics—it's about resonance, trust, and lasting impact.
+          </p>
+        </div>
+      </div>
+
+      <!-- Decorative Elements -->
+      <div
+        class="absolute top-1/2 -right-1/4 w-[800px] h-[800px] bg-accent/5 blur-[150px] rounded-full -translate-y-1/2"
+      >
+      </div>
+    </section>
+
+    <!-- Strategy Section -->
+    <section class="py-32 bg-muted/10 border-y border-white/5">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+          <div>
+            <h2
+              class="text-4xl md:text-6xl font-display font-medium tracking-tighter mb-8"
+            >
+              Strategy-led <br /><span class="text-white/40"
+                >visual storytelling.</span>
+            </h2>
+            <p class="text-white/60 leading-relaxed text-lg mb-12">
+              Every brand we build starts with deep research. We identify your
+              "Why" before we even think about the "How". This ensures your
+              identity isn't just a logo, but a strategic asset.
+            </p>
+            <ul class="space-y-6">
+              {
+                [
+                  {
+                    title: "Market Research",
+                    desc: "Understanding the landscape and identifying gaps.",
+                  },
+                  {
+                    title: "Brand Voice",
+                    desc: "Defining how your brand speaks to the world.",
+                  },
+                  {
+                    title: "Visual Language",
+                    desc: "Selecting colors, type, and imagery that connect.",
+                  },
+                ].map((item) => (
+                  <li class="flex gap-4">
+                    <div class="w-1.5 h-1.5 rounded-full bg-accent mt-2" />
+                    <div>
+                      <h4 class="font-bold text-sm uppercase tracking-wider mb-1">
+                        {item.title}
+                      </h4>
+                      <p class="text-white/40 text-sm">{item.desc}</p>
+                    </div>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+          <div
+            class="aspect-square rounded-4xl overflow-hidden border border-white/10 bg-muted"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1635336110753-3c22789f816c?auto=format&fit=crop&q=80&w=1200"
+              alt="Branding"
+              class="w-full h-full object-cover opacity-60"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Process -->
+    <section class="py-32">
+      <div class="container mx-auto px-6">
+        <div class="max-w-xl mb-24">
+          <p
+            class="text-accent text-xs font-bold uppercase tracking-[0.2em] mb-6"
+          >
+            Our Process
+          </p>
+          <h2
+            class="text-4xl md:text-6xl font-display font-medium leading-tight tracking-tight"
+          >
+            The journey to <br /><span class="text-white/40">perfection.</span>
+          </h2>
+        </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 border border-white/5"
+        >
+          {
+            [
+              {
+                step: "01",
+                title: "Discovery",
+                desc: "Deep dive into your business, goals, and audience to build a solid foundation.",
+              },
+              {
+                step: "02",
+                title: "Concepts",
+                desc: "Iterative design phase where we explore multiple visual directions and narratives.",
+              },
+              {
+                step: "03",
+                title: "Refinement",
+                desc: "Polishing the chosen identity to absolute perfection across all mediums.",
+              },
+            ].map((item) => (
+              <div class="bg-background p-12 md:p-16 group hover:bg-muted/30 transition-all duration-500">
+                <span class="text-4xl font-display font-medium text-white/10 mb-8 block">
+                  {item.step}
+                </span>
+                <h3 class="text-2xl font-display font-medium mb-6 group-hover:text-accent transition-colors">
+                  {item.title}
+                </h3>
+                <p class="text-white/40 leading-relaxed text-sm mb-0">
+                  {item.desc}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-40">
+      <div class="container mx-auto px-6">
+        <div
+          class="bg-accent p-12 md:p-32 rounded-[3rem] text-background text-center relative overflow-hidden group"
+        >
+          <div class="relative z-10">
+            <h2
+              class="text-5xl md:text-8xl font-display font-medium tracking-tighter mb-12 leading-[0.9]"
+            >
+              Let's make <br />
+              <i>your brand</i> iconic.
+            </h2>
+            <a
+              href="/#contact"
+              class="inline-flex h-16 items-center justify-center px-12 rounded-full bg-background text-accent font-black text-sm uppercase tracking-widest hover:scale-105 transition-transform"
+            >
+              Start Project
+            </a>
+          </div>
+          <!-- Decorative Background Text -->
+          <div
+            class="absolute inset-0 flex items-center justify-center opacity-[0.03] select-none pointer-events-none"
+          >
+            <span
+              class="text-[30vw] font-display font-black uppercase tracking-tighter"
+              >BRAND</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,156 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+---
+
+<Layout title="CVR Optimization | Aquorix.digital">
+  <Navbar />
+  <main>
+    <!-- Hero Section -->
+    <section
+      class="min-h-screen flex items-center pt-32 pb-20 relative overflow-hidden bg-background"
+    >
+      <div class="container mx-auto px-6 relative z-10 text-center">
+        <div class="max-w-4xl mx-auto">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 mb-10 bg-accent/10 rounded-full border border-accent/20 mx-auto"
+          >
+            <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+            <span
+              class="text-[9px] uppercase tracking-widest font-bold text-accent"
+              >Performance Service</span
+            >
+          </div>
+          <h1
+            class="text-6xl md:text-[10rem] font-display font-medium leading-[0.85] tracking-tighter mb-12"
+          >
+            Maximize <br />
+            <span class="text-white/20">revenue</span>
+            <br />
+            <span class="italic font-display text-white">growth.</span>
+          </h1>
+          <p
+            class="text-xl md:text-3xl text-white/40 leading-relaxed font-sans max-w-2xl mx-auto"
+          >
+            Data-driven insights to turn your existing traffic into loyal
+            customers. We optimize every touchpoint to maximize your ROI.
+          </p>
+        </div>
+      </div>
+
+      <!-- Subtle Dynamic Background -->
+      <div
+        class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(191,255,0,0.05),transparent_50%)]"
+      >
+      </div>
+    </section>
+
+    <!-- Metrics Section -->
+    <section class="py-32 bg-muted/10">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+          {
+            [
+              { val: "35%+", label: "Avg. CVR Increase" },
+              { val: "2.4x", label: "ROI Multiple" },
+              { val: "500+", label: "A/B Tests Run" },
+              { val: "0", label: "Guesswork Involved" },
+            ].map((stat) => (
+              <div class="text-center p-10 border border-white/5 rounded-3xl bg-background shadow-xl">
+                <span class="text-5xl md:text-7xl font-display font-medium text-accent mb-4 block">
+                  {stat.val}
+                </span>
+                <span class="text-[10px] uppercase tracking-widest font-bold text-white/30">
+                  {stat.label}
+                </span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Content Breakdown -->
+    <section class="py-32 border-y border-white/5">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+          <div>
+            <p
+              class="text-accent text-xs font-bold uppercase tracking-[0.2em] mb-6"
+            >
+              The Methodology
+            </p>
+            <h2
+              class="text-4xl md:text-6xl font-display font-medium leading-tight mb-8"
+            >
+              Science meets <br /><span class="text-white/40">conversion.</span>
+            </h2>
+            <div class="space-y-12">
+              {
+                [
+                  {
+                    title: "Funnel Analysis",
+                    desc: "We track every drop-off to identify where you're losing money.",
+                  },
+                  {
+                    title: "UVP Testing",
+                    desc: "Testing your Value Proposition to find what truly resonates with your audience.",
+                  },
+                  {
+                    title: "Psychological UX",
+                    desc: "Applying cognitive design principles to guide the user to the 'Buy' button.",
+                  },
+                ].map((item) => (
+                  <div>
+                    <h4 class="text-xl font-display font-medium mb-3">
+                      {item.title}
+                    </h4>
+                    <p class="text-white/40 leading-relaxed">{item.desc}</p>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+          <div
+            class="aspect-4/5 bg-muted rounded-4xl overflow-hidden border border-white/10 group"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1614850523296-e842407f6e0c?auto=format&fit=crop&q=80&w=1200"
+              alt="CVR"
+              class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-1000"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-40">
+      <div class="container mx-auto px-6 max-w-5xl">
+        <div
+          class="bg-background border border-white/10 rounded-[4rem] p-12 md:p-32 text-center relative overflow-hidden"
+        >
+          <h2
+            class="text-4xl md:text-7xl font-display font-medium tracking-tighter mb-12 relative z-10 leading-[0.9]"
+          >
+            Stop leaving <br />
+            <span class="text-white/20">money on the</span>
+            <i class="text-accent">table.</i>
+          </h2>
+          <a
+            href="/#contact"
+            class="inline-flex h-16 items-center justify-center px-12 rounded-full bg-accent text-background font-black text-xs uppercase tracking-widest hover:scale-110 transition-all relative z-10"
+          >
+            Get Free Audit
+          </a>
+          <div
+            class="absolute -top-1/2 -left-1/2 w-full h-full bg-accent/5 blur-[120px] rounded-full"
+          >
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

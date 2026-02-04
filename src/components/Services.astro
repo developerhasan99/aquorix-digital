@@ -1,27 +1,31 @@
 ---
 const services = [
   {
+    slug: "branding",
     category: "Design",
-    title: "Brand Identity",
-    description: "We create distinctive visual identities that capture your brand's essence and resonance.",
+    title: "Branding",
+    description: "Creating iconic visual identities and brand strategies that resonate deeply with your audience.",
     num: "01"
   },
   {
-    category: "Development",
-    title: "Web Platforms",
-    description: "High-performance digital products engineered for scalability and seamless user experience.",
+    slug: "web-design",
+    category: "Design",
+    title: "Web Design",
+    description: "Bespoke, high-end digital experiences designed with a focus on minimalism and conversion.",
     num: "02"
   },
   {
-    category: "Design",
-    title: "UI/UX Design",
-    description: "User-centric interfaces that combine aesthetic beauty with intuitive functionality.",
+    slug: "cvr-optimization",
+    category: "Strategic",
+    title: "CVR Optimization",
+    description: "Data-driven strategies and A/B testing aimed at maximizing your conversion rates and ROI.",
     num: "03"
   },
   {
-    category: "Creative",
-    title: "Art Direction",
-    description: "Strategic visual storytelling that elevates your brand across all digital touchpoints.",
+    slug: "ecommerce-solution",
+    category: "Development",
+    title: "Ecommerce Solution",
+    description: "Powerful, scalable online stores engineered for maximum performance and growth.",
     num: "04"
   }
 ];
@@ -47,7 +51,7 @@ const services = [
     <!-- Services Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/5 border border-white/5">
       {services.map((service) => (
-        <div class="bg-background p-12 md:p-16 group hover:bg-muted/30 transition-all duration-500 relative overflow-hidden">
+        <a href={`/services/${service.slug}`} class="bg-background p-12 md:p-16 group hover:bg-muted/30 transition-all duration-500 relative overflow-hidden block cursor-pointer">
           <div class="flex justify-between items-start mb-12">
             <span class="text-xs font-bold uppercase tracking-widest text-white/30">{service.category}</span>
             <span class="text-xs font-bold font-display text-white/20">{service.num}</span>
@@ -56,13 +60,18 @@ const services = [
           <h3 class="text-3xl font-display font-medium mb-6 group-hover:text-accent transition-colors leading-tight">
             {service.title}
           </h3>
-          <p class="text-white/40 leading-relaxed mb-0">
+          <p class="text-white/40 leading-relaxed mb-8">
             {service.description}
           </p>
+
+          <div class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-accent opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0">
+            View Service
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
           
           <!-- Subtle Glow on Hover -->
           <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-accent/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        </div>
+        </a>
       ))}
     </div>
   </div>

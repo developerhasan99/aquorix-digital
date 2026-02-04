@@ -1,0 +1,169 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+---
+
+<Layout title="Web Design | Aquorix.digital">
+  <Navbar />
+  <main>
+    <!-- Hero Section -->
+    <section
+      class="min-h-screen flex items-center pt-32 pb-20 relative overflow-hidden bg-background"
+    >
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-4xl">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 mb-10 bg-accent/10 rounded-full border border-accent/20"
+          >
+            <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+            <span
+              class="text-[9px] uppercase tracking-widest font-bold text-accent"
+              >Core Service</span
+            >
+          </div>
+          <h1
+            class="text-6xl md:text-[10rem] font-display font-medium leading-[0.85] tracking-tighter mb-12"
+          >
+            Digital <br />
+            <span class="text-white/20">experience</span>
+            <br />
+            <span class="italic font-display text-white">refined.</span>
+          </h1>
+          <p
+            class="text-xl md:text-3xl text-white/40 leading-relaxed font-sans max-w-2xl"
+          >
+            We design websites that don't just look good—they perform. Precision
+            engineering meets minimalist art to create digital journeys that
+            convert.
+          </p>
+        </div>
+      </div>
+
+      <!-- Abstract Grid Overlay -->
+      <div
+        class="absolute inset-0 pointer-events-none opacity-[0.03]"
+        style="background-image: radial-gradient(circle, #fff 1px, transparent 1px); background-size: 40px 40px;"
+      >
+      </div>
+    </section>
+
+    <!-- Showcase Grid -->
+    <section class="py-32 bg-muted/10 border-y border-white/5">
+      <div class="container mx-auto px-6">
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 border border-white/5 overflow-hidden rounded-4xl"
+        >
+          {
+            [
+              {
+                title: "Minimalist UI",
+                desc: "Removing the unnecessary to let your message shine.",
+              },
+              {
+                title: "Fluid UX",
+                desc: "Intuitive flows that guide users naturally to conversion.",
+              },
+              {
+                title: "Responsive Art",
+                desc: "Perfectly optimized for every retina and mobile screen.",
+              },
+            ].map((item) => (
+              <div class="bg-background p-12 md:p-16 transition-colors duration-500 hover:bg-muted/30">
+                <h3 class="text-2xl font-display font-medium mb-6">
+                  {item.title}
+                </h3>
+                <p class="text-white/40 text-sm leading-relaxed mb-0">
+                  {item.desc}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Excellence -->
+    <section class="py-32 overflow-hidden">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row gap-20 items-center">
+          <div class="flex-1 order-2 md:order-1 relative">
+            <div
+              class="aspect-video bg-muted rounded-3xl overflow-hidden border border-white/5 shadow-2xl relative z-10"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1200"
+                alt="Web Design"
+                class="w-full h-full object-cover opacity-60"
+              />
+            </div>
+            <div
+              class="absolute -top-10 -left-10 w-40 h-40 bg-accent/20 blur-[100px] rounded-full"
+            >
+            </div>
+          </div>
+          <div class="flex-1 order-1 md:order-2">
+            <p
+              class="text-accent text-xs font-bold uppercase tracking-[0.2em] mb-6"
+            >
+              Technical Art
+            </p>
+            <h2
+              class="text-4xl md:text-7xl font-display font-medium leading-[0.9] tracking-tighter mb-8"
+            >
+              Where form <br /><span class="text-white/40"
+                >meets function.</span>
+            </h2>
+            <p class="text-white/60 text-lg leading-relaxed mb-10">
+              We don't believe in templates. Every pixel is custom-crafted to
+              represent your brand's unique position in the market. We use
+              modern frameworks to ensure blazing fast speeds and premium
+              interactions.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              {
+                ["Astro", "React", "Next.js", "Motion", "Tailwind"].map(
+                  (tech) => (
+                    <span class="px-4 py-2 rounded-full border border-white/10 text-[10px] uppercase font-bold tracking-widest text-white/40">
+                      {tech}
+                    </span>
+                  ),
+                )
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-40">
+      <div class="container mx-auto px-6 text-center">
+        <h2
+          class="text-5xl md:text-9xl font-display font-medium tracking-tighter mb-16 leading-[0.8]"
+        >
+          Ready for a <br />
+          <span class="text-white/20">digital</span>
+          <i>evolution?</i>
+        </h2>
+        <a
+          href="/#contact"
+          class="inline-flex h-20 items-center justify-center px-16 rounded-full bg-accent text-background font-black text-sm uppercase tracking-widest hover:scale-105 transition-transform group"
+        >
+          Build My Site
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="3"
+            class="ml-4 group-hover:translate-x-2 transition-transform"
+            ><path d="M5 12h14M12 5l7 7-7 7"></path></svg
+          >
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
