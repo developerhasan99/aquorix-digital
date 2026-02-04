@@ -6,75 +6,87 @@ import Footer from "../../components/Footer.astro";
 
 <Layout title="Web Design | Aquorix.digital">
   <Navbar />
-  <main>
-    <!-- Hero Section -->
+  <main class="bg-background selection:bg-accent selection:text-background">
+    <!-- Hero Section: Architectural & Immersive -->
     <section
-      class="min-h-screen flex items-center pt-32 pb-20 relative overflow-hidden bg-background"
+      class="min-h-screen flex items-center pt-40 pb-24 relative overflow-hidden border-b border-white/5"
     >
       <div class="container mx-auto px-6 relative z-10">
-        <div class="max-w-4xl">
-          <div
-            class="inline-flex items-center gap-2 px-3 py-1 mb-10 bg-accent/10 rounded-full border border-accent/20"
-          >
-            <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-            <span
-              class="text-[9px] uppercase tracking-widest font-bold text-accent"
-              >Core Service</span
+        <div
+          class="flex flex-col md:flex-row justify-between items-start md:items-end gap-16"
+        >
+          <div class="max-w-5xl">
+            <div
+              class="inline-flex items-center gap-3 px-3 py-1 mb-10 bg-accent/10 rounded-full border border-accent/20"
             >
+              <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"
+              ></span>
+              <span
+                class="text-[9px] uppercase tracking-widest font-bold text-accent"
+                >Digital Experience Design</span
+              >
+            </div>
+            <h1
+              class="text-7xl md:text-[11.5rem] font-display font-medium leading-[0.8] tracking-tighter mb-12"
+            >
+              Experience <br />
+              <span class="italic text-white">Refined.</span>
+              <br />
+              <span class="text-white/20">Digital</span> Art.
+            </h1>
           </div>
-          <h1
-            class="text-6xl md:text-[10rem] font-display font-medium leading-[0.85] tracking-tighter mb-12"
-          >
-            Digital <br />
-            <span class="text-white/20">experience</span>
-            <br />
-            <span class="italic font-display text-white">refined.</span>
-          </h1>
-          <p
-            class="text-xl md:text-3xl text-white/40 leading-relaxed font-sans max-w-2xl"
-          >
-            We design websites that don't just look good—they perform. Precision
-            engineering meets minimalist art to create digital journeys that
-            convert.
-          </p>
+          <div class="max-w-xs md:mb-12">
+            <p
+              class="text-base md:text-lg text-white/40 leading-relaxed font-sans border-l border-accent/30 pl-8"
+            >
+              We engineer high-performance digital products that combine
+              architectural precision with immersive visual storytelling.
+            </p>
+          </div>
         </div>
       </div>
 
       <!-- Abstract Grid Overlay -->
       <div
         class="absolute inset-0 pointer-events-none opacity-[0.03]"
-        style="background-image: radial-gradient(circle, #fff 1px, transparent 1px); background-size: 40px 40px;"
+        style="background-image: radial-gradient(circle, #fff 1px, transparent 1px); background-size: 60px 60px;"
       >
       </div>
     </section>
 
-    <!-- Showcase Grid -->
-    <section class="py-32 bg-muted/10 border-y border-white/5">
+    <!-- Design Core: Functional Pillars -->
+    <section class="py-32 border-b border-white/5 bg-muted/5">
       <div class="container mx-auto px-6">
         <div
-          class="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 border border-white/5 overflow-hidden rounded-4xl"
+          class="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 border border-white/5"
         >
           {
             [
               {
-                title: "Minimalist UI",
-                desc: "Removing the unnecessary to let your message shine.",
+                title: "Precision UX",
+                desc: "Mapping psychological user journeys that eliminate friction and maximize engagement.",
+                label: "The Logic",
               },
               {
-                title: "Fluid UX",
-                desc: "Intuitive flows that guide users naturally to conversion.",
+                title: "Aesthetic Clarity",
+                desc: "Minimalist design philosophy that lets your content breathe and your brand's essence shine.",
+                label: "The Form",
               },
               {
-                title: "Responsive Art",
-                desc: "Perfectly optimized for every retina and mobile screen.",
+                title: "Motion Narratives",
+                desc: "Subtle micro-interactions and transitions that make digital experiences feel alive and responsive.",
+                label: "The Life",
               },
-            ].map((item) => (
-              <div class="bg-background p-12 md:p-16 transition-colors duration-500 hover:bg-muted/30">
-                <h3 class="text-2xl font-display font-medium mb-6">
-                  {item.title}
+            ].map((pillar) => (
+              <div class="bg-background p-12 md:p-16 hover:bg-muted/10 transition-colors group">
+                <span class="text-[10px] uppercase tracking-[0.3em] font-bold text-accent/40 mb-10 block group-hover:text-accent transition-colors">
+                  {pillar.label}
+                </span>
+                <h3 class="text-3xl font-display font-medium mb-8 leading-none tracking-tight">
+                  {pillar.title}
                 </h3>
-                <p class="text-white/40 text-sm leading-relaxed mb-0">
-                  {item.desc}
+                <p class="text-white/40 leading-relaxed text-sm">
+                  {pillar.desc}
                 </p>
               </div>
             ))
@@ -83,85 +95,207 @@ import Footer from "../../components/Footer.astro";
       </div>
     </section>
 
-    <!-- Technical Excellence -->
-    <section class="py-32 overflow-hidden">
+    <!-- Technical Art: Deliverables Grid -->
+    <section class="py-32 bg-background">
       <div class="container mx-auto px-6">
-        <div class="flex flex-col md:flex-row gap-20 items-center">
-          <div class="flex-1 order-2 md:order-1 relative">
-            <div
-              class="aspect-video bg-muted rounded-3xl overflow-hidden border border-white/5 shadow-2xl relative z-10"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1200"
-                alt="Web Design"
-                class="w-full h-full object-cover opacity-60"
-              />
-            </div>
-            <div
-              class="absolute -top-10 -left-10 w-40 h-40 bg-accent/20 blur-[100px] rounded-full"
-            >
-            </div>
-          </div>
-          <div class="flex-1 order-1 md:order-2">
+        <div
+          class="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-12"
+        >
+          <div class="max-w-2xl">
             <p
               class="text-accent text-xs font-bold uppercase tracking-[0.2em] mb-6"
             >
               Technical Art
             </p>
             <h2
-              class="text-4xl md:text-7xl font-display font-medium leading-[0.9] tracking-tighter mb-8"
+              class="text-5xl md:text-8xl font-display font-medium leading-[0.9] tracking-tighter"
             >
-              Where form <br /><span class="text-white/40"
-                >meets function.</span>
+              Engineered <br /><span class="text-white/20">for impact.</span>
             </h2>
-            <p class="text-white/60 text-lg leading-relaxed mb-10">
-              We don't believe in templates. Every pixel is custom-crafted to
-              represent your brand's unique position in the market. We use
-              modern frameworks to ensure blazing fast speeds and premium
-              interactions.
-            </p>
-            <div class="flex flex-wrap gap-4">
-              {
-                ["Astro", "React", "Next.js", "Motion", "Tailwind"].map(
-                  (tech) => (
-                    <span class="px-4 py-2 rounded-full border border-white/10 text-[10px] uppercase font-bold tracking-widest text-white/40">
-                      {tech}
-                    </span>
-                  ),
-                )
-              }
-            </div>
           </div>
+          <p class="text-white/40 max-w-xs text-sm leading-relaxed">
+            Modern frameworks meet bespoke design to create websites that are as
+            fast as they are beautiful.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {
+            [
+              {
+                title: "Design Systems",
+                desc: "Scalable component libraries integrated with your brand values.",
+                icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10",
+              },
+              {
+                title: "Performance",
+                desc: "Blazing fast load times and optimized Core Web Vitals.",
+                icon: "M13 10V3L4 14h7v7l9-11h-7z",
+              },
+              {
+                title: "Immersive Motion",
+                desc: "Custom GSAP and Framer Motion animations for premium feel.",
+                icon: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15",
+              },
+              {
+                title: "Headless Web",
+                desc: "Modern JAMstack architecture for maximum security and scale.",
+                icon: "M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9",
+              },
+            ].map((item) => (
+              <div class="p-10 rounded-3xl bg-muted/10 border border-white/5 hover:border-accent/40 transition-all duration-500 group">
+                <div class="w-12 h-12 rounded-2xl bg-accent/5 flex items-center justify-center mb-10 group-hover:bg-accent transition-all duration-500">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    class="text-accent group-hover:text-background transition-colors"
+                  >
+                    <path
+                      d={item.icon}
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <h4 class="text-xl font-display font-medium mb-4">
+                  {item.title}
+                </h4>
+                <p class="text-white/30 text-xs leading-relaxed">{item.desc}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Design Process: Architectural Flow -->
+    <section class="py-32 border-t border-white/5 bg-muted/5 relative">
+      <div class="container mx-auto px-6">
+        <div class="max-w-xl mb-32">
+          <p
+            class="text-accent text-xs font-bold uppercase tracking-[0.2em] mb-6"
+          >
+            Our Workflow
+          </p>
+          <h2
+            class="text-5xl md:text-7xl font-display font-medium leading-[0.9] tracking-tighter"
+          >
+            Articulated <br /><span class="text-white/20">precision.</span>
+          </h2>
+        </div>
+
+        <div class="space-y-32">
+          {
+            [
+              {
+                num: "01",
+                title: "Conceptual Prototype",
+                desc: "We translate strategy into low-fidelity flows, focusing purely on hierarchy and interaction logic before introducing aesthetics.",
+                points: [
+                  "UX Mapping",
+                  "Interactive Wireframes",
+                  "Hierarchy Analysis",
+                ],
+              },
+              {
+                num: "02",
+                title: "Visual Synthesis",
+                desc: "Applying your brand's unique identity to the interface. We create high-fidelity screens that embody your brand's soul.",
+                points: [
+                  "Modular Design",
+                  "Aesthetic Refinement",
+                  "Component Systems",
+                ],
+              },
+              {
+                num: "03",
+                title: "Technical Execution",
+                desc: "Clean, performant code that brings the vision to life. We ensure every interaction is butter-smooth and ultra-responsive.",
+                points: [
+                  "Semantic Coding",
+                  "Motion Integration",
+                  "Device Optimization",
+                ],
+              },
+            ].map((phase, idx) => (
+              <div class="flex flex-col md:flex-row gap-16 md:gap-32 items-start">
+                <div class="shrink-0">
+                  <span class="text-6xl md:text-9xl font-display font-medium text-white/5 italic">
+                    {phase.num}
+                  </span>
+                </div>
+                <div class="max-w-2xl">
+                  <h3 class="text-3xl md:text-5xl font-display font-medium mb-8 leading-tight">
+                    {phase.title}
+                  </h3>
+                  <p class="text-white/40 text-lg leading-relaxed mb-12">
+                    {phase.desc}
+                  </p>
+                  <div class="flex flex-wrap gap-4">
+                    {phase.points.map((p) => (
+                      <span class="px-4 py-1.5 rounded-full border border-white/10 text-[10px] font-bold uppercase tracking-widest text-white/20">
+                        {p}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div
+                  class={`hidden md:block absolute right-0 w-1/4 h-px bg-accent/20 translate-y-24 ${idx === 2 ? "opacity-0" : ""}`}
+                />
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-40">
-      <div class="container mx-auto px-6 text-center">
-        <h2
-          class="text-5xl md:text-9xl font-display font-medium tracking-tighter mb-16 leading-[0.8]"
+    <section class="py-40 border-t border-white/5">
+      <div class="container mx-auto px-6">
+        <div
+          class="bg-accent p-12 md:p-32 rounded-[4rem] text-background text-center relative overflow-hidden group"
         >
-          Ready for a <br />
-          <span class="text-white/20">digital</span>
-          <i>evolution?</i>
-        </h2>
-        <a
-          href="/#contact"
-          class="inline-flex h-20 items-center justify-center px-16 rounded-full bg-accent text-background font-black text-sm uppercase tracking-widest hover:scale-105 transition-transform group"
-        >
-          Build My Site
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="3"
-            class="ml-4 group-hover:translate-x-2 transition-transform"
-            ><path d="M5 12h14M12 5l7 7-7 7"></path></svg
+          <div class="relative z-10">
+            <p
+              class="text-[10px] font-bold uppercase tracking-[0.4em] mb-12 text-background/60"
+            >
+              Ready to build?
+            </p>
+            <h2
+              class="text-5xl md:text-9xl font-display font-medium tracking-tighter mb-20 leading-[0.8]"
+            >
+              Start your <br />
+              <i>evolution.</i>
+            </h2>
+            <div
+              class="flex flex-col md:flex-row items-center justify-center gap-8"
+            >
+              <a
+                href="/#contact"
+                class="w-full md:w-auto inline-flex h-20 items-center justify-center px-16 rounded-full bg-background text-accent font-black text-sm uppercase tracking-widest hover:scale-105 transition-transform"
+              >
+                Build My Site
+              </a>
+              <a
+                href="#services"
+                class="text-xs font-bold uppercase tracking-[0.2em] text-background/60 hover:text-background transition-colors"
+                >View All Capabilities</a
+              >
+            </div>
+          </div>
+          <div
+            class="absolute inset-0 flex items-center justify-center opacity-[0.05] select-none pointer-events-none"
           >
-        </a>
+            <span
+              class="text-[40vw] font-display font-black uppercase tracking-tighter"
+              >DESIGN</span
+            >
+          </div>
+        </div>
       </div>
     </section>
   </main>

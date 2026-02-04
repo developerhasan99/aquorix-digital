@@ -6,64 +6,90 @@ import Footer from "../../components/Footer.astro";
 
 <Layout title="CVR Optimization | Aquorix.digital">
   <Navbar />
-  <main>
-    <!-- Hero Section -->
+  <main class="bg-background selection:bg-accent selection:text-background">
+    <!-- Hero Section: Architectural & Immersive -->
     <section
-      class="min-h-screen flex items-center pt-32 pb-20 relative overflow-hidden bg-background"
+      class="min-h-screen flex items-center pt-40 pb-24 relative overflow-hidden border-b border-white/5"
     >
-      <div class="container mx-auto px-6 relative z-10 text-center">
-        <div class="max-w-4xl mx-auto">
-          <div
-            class="inline-flex items-center gap-2 px-3 py-1 mb-10 bg-accent/10 rounded-full border border-accent/20 mx-auto"
-          >
-            <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-            <span
-              class="text-[9px] uppercase tracking-widest font-bold text-accent"
-              >Performance Service</span
+      <div class="container mx-auto px-6 relative z-10">
+        <div
+          class="flex flex-col md:flex-row justify-between items-start md:items-end gap-16"
+        >
+          <div class="max-w-5xl">
+            <div
+              class="inline-flex items-center gap-3 px-3 py-1 mb-10 bg-accent/10 rounded-full border border-accent/20"
             >
+              <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"
+              ></span>
+              <span
+                class="text-[9px] uppercase tracking-widest font-bold text-accent"
+                >Performance Optimization</span
+              >
+            </div>
+            <h1
+              class="text-7xl md:text-[11.5rem] font-display font-medium leading-[0.8] tracking-tighter mb-12"
+            >
+              The Science <br />
+              <span class="text-white/20">of Digital</span>
+              <br />
+              <span class="italic text-white">Growth.</span>
+            </h1>
           </div>
-          <h1
-            class="text-6xl md:text-[10rem] font-display font-medium leading-[0.85] tracking-tighter mb-12"
-          >
-            Maximize <br />
-            <span class="text-white/20">revenue</span>
-            <br />
-            <span class="italic font-display text-white">growth.</span>
-          </h1>
-          <p
-            class="text-xl md:text-3xl text-white/40 leading-relaxed font-sans max-w-2xl mx-auto"
-          >
-            Data-driven insights to turn your existing traffic into loyal
-            customers. We optimize every touchpoint to maximize your ROI.
-          </p>
+          <div class="max-w-xs md:mb-12">
+            <p
+              class="text-base md:text-lg text-white/40 leading-relaxed font-sans border-l border-accent/30 pl-8"
+            >
+              We don't guess. We analyze, test, and optimize. Our data-driven
+              methodology turns your existing traffic into a high-converting
+              revenue engine.
+            </p>
+          </div>
         </div>
       </div>
 
-      <!-- Subtle Dynamic Background -->
-      <div
-        class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(191,255,0,0.05),transparent_50%)]"
-      >
+      <!-- Subtle Dynamic Background Detail -->
+      <div class="absolute inset-0 pointer-events-none">
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vw] bg-[radial-gradient(circle_at_center,rgba(191,255,0,0.02)_0%,transparent_60%)]"
+        >
+        </div>
       </div>
     </section>
 
-    <!-- Metrics Section -->
-    <section class="py-32 bg-muted/10">
+    <!-- Optimization Pillars: Core Strategy -->
+    <section class="py-32 border-b border-white/5 bg-muted/5">
       <div class="container mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 border border-white/5"
+        >
           {
             [
-              { val: "35%+", label: "Avg. CVR Increase" },
-              { val: "2.4x", label: "ROI Multiple" },
-              { val: "500+", label: "A/B Tests Run" },
-              { val: "0", label: "Guesswork Involved" },
-            ].map((stat) => (
-              <div class="text-center p-10 border border-white/5 rounded-3xl bg-background shadow-xl">
-                <span class="text-5xl md:text-7xl font-display font-medium text-accent mb-4 block">
-                  {stat.val}
+              {
+                title: "Data Insights",
+                desc: "Deep quantitative analysis to identify exactly where and why users are dropping off your funnel.",
+                label: "Quantitative",
+              },
+              {
+                title: "Behavioral Logic",
+                desc: "Qualitative research using heatmaps and session recordings to understand user intent and friction.",
+                label: "Qualitative",
+              },
+              {
+                title: "ROI Engineering",
+                desc: "Systematic A/B testing focused on metrics that actually impact your bottom line, not just vanity stats.",
+                label: "Strategic",
+              },
+            ].map((pillar) => (
+              <div class="bg-background p-12 md:p-16 hover:bg-muted/10 transition-colors group">
+                <span class="text-[10px] uppercase tracking-[0.3em] font-bold text-accent/40 mb-10 block group-hover:text-accent transition-colors">
+                  {pillar.label}
                 </span>
-                <span class="text-[10px] uppercase tracking-widest font-bold text-white/30">
-                  {stat.label}
-                </span>
+                <h3 class="text-3xl font-display font-medium mb-8 leading-none tracking-tight">
+                  {pillar.title}
+                </h3>
+                <p class="text-white/40 leading-relaxed text-sm">
+                  {pillar.desc}
+                </p>
               </div>
             ))
           }
@@ -71,82 +97,193 @@ import Footer from "../../components/Footer.astro";
       </div>
     </section>
 
-    <!-- Content Breakdown -->
-    <section class="py-32 border-y border-white/5">
+    <!-- Metrics: Performance Results -->
+    <section class="py-32 bg-background">
       <div class="container mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
-          <div>
+        <div
+          class="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-12"
+        >
+          <div class="max-w-2xl">
             <p
               class="text-accent text-xs font-bold uppercase tracking-[0.2em] mb-6"
             >
-              The Methodology
+              Optimization Results
             </p>
             <h2
-              class="text-4xl md:text-6xl font-display font-medium leading-tight mb-8"
+              class="text-5xl md:text-8xl font-display font-medium leading-[0.9] tracking-tighter"
             >
-              Science meets <br /><span class="text-white/40">conversion.</span>
+              Impact <br /><span class="text-white/20">by the</span> numbers.
             </h2>
-            <div class="space-y-12">
+          </div>
+          <p class="text-white/40 max-w-xs text-sm leading-relaxed">
+            Systematic improvements that lead to compounding growth for your
+            digital ecosystem.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {
+            [
               {
-                [
-                  {
-                    title: "Funnel Analysis",
-                    desc: "We track every drop-off to identify where you're losing money.",
-                  },
-                  {
-                    title: "UVP Testing",
-                    desc: "Testing your Value Proposition to find what truly resonates with your audience.",
-                  },
-                  {
-                    title: "Psychological UX",
-                    desc: "Applying cognitive design principles to guide the user to the 'Buy' button.",
-                  },
-                ].map((item) => (
-                  <div>
-                    <h4 class="text-xl font-display font-medium mb-3">
-                      {item.title}
-                    </h4>
-                    <p class="text-white/40 leading-relaxed">{item.desc}</p>
-                  </div>
-                ))
-              }
-            </div>
-          </div>
-          <div
-            class="aspect-4/5 bg-muted rounded-4xl overflow-hidden border border-white/10 group"
+                val: "35%+",
+                label: "Avg. CVR Increase",
+                desc: "Consistent improvements across diverse industries and funnels.",
+              },
+              {
+                val: "2.4x",
+                label: "ROI Multiple",
+                desc: "Direct impact on customer acquisition costs and lifetime value.",
+              },
+              {
+                val: "500+",
+                label: "A/B Tests Run",
+                desc: "Extensive library of proven conversion patterns and experiments.",
+              },
+              {
+                val: "0",
+                label: "Guesswork",
+                desc: "Every recommendation is backed by rigorous empirical data.",
+              },
+            ].map((stat) => (
+              <div class="p-10 rounded-3xl bg-muted/10 border border-white/5 hover:border-accent/40 transition-all duration-500 group">
+                <span class="text-5xl md:text-6xl font-display font-medium text-accent mb-6 block">
+                  {stat.val}
+                </span>
+                <h4 class="text-xs font-bold uppercase tracking-[0.2em] text-white/60 mb-4">
+                  {stat.label}
+                </h4>
+                <p class="text-white/30 text-[10px] uppercase tracking-widest leading-relaxed">
+                  {stat.desc}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Methodology: The Scientific Flow -->
+    <section class="py-32 border-t border-white/5 bg-muted/5 relative">
+      <div class="container mx-auto px-6">
+        <div class="max-w-xl mb-32">
+          <p
+            class="text-accent text-xs font-bold uppercase tracking-[0.2em] mb-6"
           >
-            <img
-              src="https://images.unsplash.com/photo-1614850523296-e842407f6e0c?auto=format&fit=crop&q=80&w=1200"
-              alt="CVR"
-              class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-1000"
-            />
-          </div>
+            Our Methodology
+          </p>
+          <h2
+            class="text-5xl md:text-7xl font-display font-medium leading-[0.9] tracking-tighter"
+          >
+            Rigorous <br /><span class="text-white/20">verification.</span>
+          </h2>
+        </div>
+
+        <div class="space-y-32">
+          {
+            [
+              {
+                num: "01",
+                title: "Funnel Audit",
+                desc: "We track every single interaction to identify friction points and drop-off zones. This quantitative audit builds the foundation for our hypothesis.",
+                points: [
+                  "Event Tracking",
+                  "Drop-off Analysis",
+                  "Device Segmentation",
+                ],
+              },
+              {
+                num: "02",
+                title: "Hypothesis Branding",
+                desc: "Based on data, we formulate specific design and copy experiments aimed at solving identified friction points and boosting intent.",
+                points: [
+                  "UVP Refinement",
+                  "Layout Stress-Testing",
+                  "Copy Experiments",
+                ],
+              },
+              {
+                num: "03",
+                title: "Iterative Testing",
+                desc: "We deploy controlled A/B tests to verify our hypothesis. Only winners are scaled, ensuring every change is a step toward higher revenue.",
+                points: [
+                  "Statistical Significance",
+                  "Scaling Success",
+                  "Continuous Learning",
+                ],
+              },
+            ].map((phase, idx) => (
+              <div class="flex flex-col md:flex-row gap-16 md:gap-32 items-start">
+                <div class="shrink-0">
+                  <span class="text-6xl md:text-9xl font-display font-medium text-white/5 italic">
+                    {phase.num}
+                  </span>
+                </div>
+                <div class="max-w-2xl">
+                  <h3 class="text-3xl md:text-5xl font-display font-medium mb-8 leading-tight">
+                    {phase.title}
+                  </h3>
+                  <p class="text-white/40 text-lg leading-relaxed mb-12">
+                    {phase.desc}
+                  </p>
+                  <div class="flex flex-wrap gap-4">
+                    {phase.points.map((p) => (
+                      <span class="px-4 py-1.5 rounded-full border border-white/10 text-[10px] font-bold uppercase tracking-widest text-white/20">
+                        {p}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div
+                  class={`hidden md:block absolute right-0 w-1/4 h-px bg-accent/20 translate-y-24 ${idx === 2 ? "opacity-0" : ""}`}
+                />
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-40">
-      <div class="container mx-auto px-6 max-w-5xl">
+    <section class="py-40 border-t border-white/5">
+      <div class="container mx-auto px-6">
         <div
-          class="bg-background border border-white/10 rounded-[4rem] p-12 md:p-32 text-center relative overflow-hidden"
+          class="bg-accent p-12 md:p-32 rounded-[4rem] text-background text-center relative overflow-hidden group"
         >
-          <h2
-            class="text-4xl md:text-7xl font-display font-medium tracking-tighter mb-12 relative z-10 leading-[0.9]"
-          >
-            Stop leaving <br />
-            <span class="text-white/20">money on the</span>
-            <i class="text-accent">table.</i>
-          </h2>
-          <a
-            href="/#contact"
-            class="inline-flex h-16 items-center justify-center px-12 rounded-full bg-accent text-background font-black text-xs uppercase tracking-widest hover:scale-110 transition-all relative z-10"
-          >
-            Get Free Audit
-          </a>
+          <div class="relative z-10">
+            <p
+              class="text-[10px] font-bold uppercase tracking-[0.4em] mb-12 text-background/60"
+            >
+              Ready to scale?
+            </p>
+            <h2
+              class="text-5xl md:text-9xl font-display font-medium tracking-tighter mb-20 leading-[0.8]"
+            >
+              Unlock your <br />
+              <i>revenue.</i>
+            </h2>
+            <div
+              class="flex flex-col md:flex-row items-center justify-center gap-8"
+            >
+              <a
+                href="/#contact"
+                class="w-full md:w-auto inline-flex h-20 items-center justify-center px-16 rounded-full bg-background text-accent font-black text-sm uppercase tracking-widest hover:scale-105 transition-transform"
+              >
+                Get Free Audit
+              </a>
+              <a
+                href="#services"
+                class="text-xs font-bold uppercase tracking-[0.2em] text-background/60 hover:text-background transition-colors"
+                >View All Capabilities</a
+              >
+            </div>
+          </div>
           <div
-            class="absolute -top-1/2 -left-1/2 w-full h-full bg-accent/5 blur-[120px] rounded-full"
+            class="absolute inset-0 flex items-center justify-center opacity-[0.05] select-none pointer-events-none"
           >
+            <span
+              class="text-[40vw] font-display font-black uppercase tracking-tighter"
+              >GROWTH</span
+            >
           </div>
         </div>
       </div>

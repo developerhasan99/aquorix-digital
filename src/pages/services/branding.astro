@@ -6,150 +6,89 @@ import Footer from "../../components/Footer.astro";
 
 <Layout title="Branding | Aquorix.digital">
   <Navbar />
-  <main>
-    <!-- Hero Section -->
+  <main class="bg-background selection:bg-accent selection:text-background">
+    <!-- Hero Section: Architectural & Immersive -->
     <section
-      class="min-h-screen flex items-center pt-32 pb-20 relative overflow-hidden bg-background"
+      class="min-h-screen flex items-center pt-40 pb-24 relative overflow-hidden border-b border-white/5"
     >
       <div class="container mx-auto px-6 relative z-10">
-        <div class="max-w-4xl">
-          <div
-            class="inline-flex items-center gap-2 px-3 py-1 mb-10 bg-accent/10 rounded-full border border-accent/20"
-          >
-            <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-            <span
-              class="text-[9px] uppercase tracking-widest font-bold text-accent"
-              >Core Service</span
+        <div
+          class="flex flex-col md:flex-row justify-between items-start md:items-end gap-16"
+        >
+          <div class="max-w-5xl">
+            <div
+              class="inline-flex items-center gap-3 px-3 py-1 mb-10 bg-accent/10 rounded-full border border-accent/20"
             >
+              <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"
+              ></span>
+              <span
+                class="text-[9px] uppercase tracking-widest font-bold text-accent"
+                >Core Identity Design</span
+              >
+            </div>
+            <h1
+              class="text-7xl md:text-[11.5rem] font-display font-medium leading-[0.8] tracking-tighter mb-12"
+            >
+              The <span class="italic text-white">Soul</span>
+              <br />
+              <span class="text-white/20">of your</span>
+              <br />
+              Business.
+            </h1>
           </div>
-          <h1
-            class="text-6xl md:text-[10rem] font-display font-medium leading-[0.85] tracking-tighter mb-12"
-          >
-            Building <br />
-            <span class="text-white/20">iconic</span>
-            <br />
-            <span class="italic font-display">identities.</span>
-          </h1>
-          <p
-            class="text-xl md:text-3xl text-white/40 leading-relaxed font-sans max-w-2xl"
-          >
-            We craft visual souls for businesses. Our branding goes beyond
-            aesthetics—it's about resonance, trust, and lasting impact.
-          </p>
-        </div>
-      </div>
-
-      <!-- Decorative Elements -->
-      <div
-        class="absolute top-1/2 -right-1/4 w-[800px] h-[800px] bg-accent/5 blur-[150px] rounded-full -translate-y-1/2"
-      >
-      </div>
-    </section>
-
-    <!-- Strategy Section -->
-    <section class="py-32 bg-muted/10 border-y border-white/5">
-      <div class="container mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-          <div>
-            <h2
-              class="text-4xl md:text-6xl font-display font-medium tracking-tighter mb-8"
+          <div class="max-w-xs md:mb-12">
+            <p
+              class="text-base md:text-lg text-white/40 leading-relaxed font-sans border-l border-accent/30 pl-8"
             >
-              Strategy-led <br /><span class="text-white/40"
-                >visual storytelling.</span>
-            </h2>
-            <p class="text-white/60 leading-relaxed text-lg mb-12">
-              Every brand we build starts with deep research. We identify your
-              "Why" before we even think about the "How". This ensures your
-              identity isn't just a logo, but a strategic asset.
+              We don't just design logos; we architect visual languages that
+              resonate with human emotion and drive strategic growth.
             </p>
-            <ul class="space-y-6">
-              {
-                [
-                  {
-                    title: "Market Research",
-                    desc: "Understanding the landscape and identifying gaps.",
-                  },
-                  {
-                    title: "Brand Voice",
-                    desc: "Defining how your brand speaks to the world.",
-                  },
-                  {
-                    title: "Visual Language",
-                    desc: "Selecting colors, type, and imagery that connect.",
-                  },
-                ].map((item) => (
-                  <li class="flex gap-4">
-                    <div class="w-1.5 h-1.5 rounded-full bg-accent mt-2" />
-                    <div>
-                      <h4 class="font-bold text-sm uppercase tracking-wider mb-1">
-                        {item.title}
-                      </h4>
-                      <p class="text-white/40 text-sm">{item.desc}</p>
-                    </div>
-                  </li>
-                ))
-              }
-            </ul>
           </div>
-          <div
-            class="aspect-square rounded-4xl overflow-hidden border border-white/10 bg-muted"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1635336110753-3c22789f816c?auto=format&fit=crop&q=80&w=1200"
-              alt="Branding"
-              class="w-full h-full object-cover opacity-60"
-            />
-          </div>
+        </div>
+      </div>
+
+      <!-- Subtle Background Detail -->
+      <div class="absolute inset-0 pointer-events-none">
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vw] bg-[radial-gradient(circle_at_center,rgba(191,255,0,0.03)_0%,transparent_70%)]"
+        >
         </div>
       </div>
     </section>
 
-    <!-- Detailed Process -->
-    <section class="py-32">
+    <!-- Brand Essence: Core Pillars -->
+    <section class="py-32 border-b border-white/5 bg-muted/5">
       <div class="container mx-auto px-6">
-        <div class="max-w-xl mb-24">
-          <p
-            class="text-accent text-xs font-bold uppercase tracking-[0.2em] mb-6"
-          >
-            Our Process
-          </p>
-          <h2
-            class="text-4xl md:text-6xl font-display font-medium leading-tight tracking-tight"
-          >
-            The journey to <br /><span class="text-white/40">perfection.</span>
-          </h2>
-        </div>
-
         <div
           class="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 border border-white/5"
         >
           {
             [
               {
-                step: "01",
-                title: "Discovery",
-                desc: "Deep dive into your business, goals, and audience to build a solid foundation.",
+                title: "Strategic Vision",
+                desc: "Deep research into market position and audience psychology before a single pixel is moved.",
+                label: "The Mind",
               },
               {
-                step: "02",
-                title: "Concepts",
-                desc: "Iterative design phase where we explore multiple visual directions and narratives.",
+                title: "Visual Resonance",
+                desc: "Crafting a unique aesthetic that captures attention and fosters instantaneous brand recognition.",
+                label: "The Face",
               },
               {
-                step: "03",
-                title: "Refinement",
-                desc: "Polishing the chosen identity to absolute perfection across all mediums.",
+                title: "Digital Scalability",
+                desc: "Systems designed to grow with you, ensuring consistency across every digital and physical touchpoint.",
+                label: "The Future",
               },
-            ].map((item) => (
-              <div class="bg-background p-12 md:p-16 group hover:bg-muted/30 transition-all duration-500">
-                <span class="text-4xl font-display font-medium text-white/10 mb-8 block">
-                  {item.step}
+            ].map((pillar) => (
+              <div class="bg-background p-12 md:p-16 hover:bg-muted/10 transition-colors group">
+                <span class="text-[10px] uppercase tracking-[0.3em] font-bold text-accent/40 mb-10 block group-hover:text-accent transition-colors">
+                  {pillar.label}
                 </span>
-                <h3 class="text-2xl font-display font-medium mb-6 group-hover:text-accent transition-colors">
-                  {item.title}
+                <h3 class="text-3xl font-display font-medium mb-8 leading-none tracking-tight">
+                  {pillar.title}
                 </h3>
-                <p class="text-white/40 leading-relaxed text-sm mb-0">
-                  {item.desc}
+                <p class="text-white/40 leading-relaxed text-sm">
+                  {pillar.desc}
                 </p>
               </div>
             ))
@@ -158,33 +97,247 @@ import Footer from "../../components/Footer.astro";
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-40">
+    <!-- Visual Language Section: Deliverables Grid -->
+    <section class="py-32 bg-background">
       <div class="container mx-auto px-6">
         <div
-          class="bg-accent p-12 md:p-32 rounded-[3rem] text-background text-center relative overflow-hidden group"
+          class="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-12"
+        >
+          <div class="max-w-2xl">
+            <p
+              class="text-accent text-xs font-bold uppercase tracking-[0.2em] mb-6"
+            >
+              The Deliverables
+            </p>
+            <h2
+              class="text-5xl md:text-8xl font-display font-medium leading-[0.9] tracking-tighter"
+            >
+              Everything <br /><span class="text-white/20">you need to</span> scale.
+            </h2>
+          </div>
+          <p class="text-white/40 max-w-xs text-sm leading-relaxed">
+            A comprehensive brand system meticulously documented for internal
+            teams and external partners.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {
+            [
+              {
+                title: "Logo Systems",
+                desc: "Primary, secondary, and sub-marks for every use case.",
+                icon: "M15 12a3 3 0 11-6 0 3 3 0 016 0z M2 12a10 10 0 1120 0 10 10 0 01-20 0z",
+              },
+              {
+                title: "Typography",
+                desc: "Custom font pairings that define your written brand voice.",
+                icon: "M4 7V4h16v3M9 20h6M12 4v16",
+              },
+              {
+                title: "Color Palettes",
+                desc: "Strategic color theory applied to your unique market position.",
+                icon: "M12 21a9 9 0 110-18 9 9 0 010 18z M12 3v18 M3 12h18",
+              },
+              {
+                title: "Identity Guide",
+                desc: "The bible of your brand, detailing all rules and usage.",
+                icon: "M4 19.5A2.5 2.5 0 016.5 17H20M4 19.5A2.5 2.5 0 001.5 22H20M4 19.5V5A2.5 2.5 0 016.5 2.5H20",
+              },
+            ].map((item) => (
+              <div class="p-10 rounded-3xl bg-muted/10 border border-white/5 hover:border-accent/40 transition-all duration-500 group">
+                <div class="w-12 h-12 rounded-2xl bg-accent/5 flex items-center justify-center mb-10 group-hover:bg-accent transition-all duration-500">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    class="text-accent group-hover:text-background transition-colors"
+                  >
+                    <path
+                      d={item.icon}
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <h4 class="text-xl font-display font-medium mb-4">
+                  {item.title}
+                </h4>
+                <p class="text-white/30 text-xs leading-relaxed">{item.desc}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Process: Architectural Flow -->
+    <section class="py-32 border-t border-white/5 bg-muted/5 relative">
+      <div class="container mx-auto px-6">
+        <div class="max-w-xl mb-32">
+          <p
+            class="text-accent text-xs font-bold uppercase tracking-[0.2em] mb-6"
+          >
+            Our Methodology
+          </p>
+          <h2
+            class="text-5xl md:text-7xl font-display font-medium leading-[0.9] tracking-tighter"
+          >
+            Architected <br /><span class="text-white/20">from within.</span>
+          </h2>
+        </div>
+
+        <div class="space-y-32">
+          {
+            [
+              {
+                num: "01",
+                title: "Immersion & Audit",
+                desc: "We dive deep into your company's culture, existing perception, and future goals. This is phase zero—the foundation upon which all visual decisions are built.",
+                points: [
+                  "Stakeholder Interviews",
+                  "Competitive Gap Analysis",
+                  "Brand Health Audit",
+                ],
+              },
+              {
+                num: "02",
+                title: "The Narrative Arc",
+                desc: "We define the story your brand tells. What is the emotion? What is the promise? We translate strategy into a verbal and conceptual framework.",
+                points: [
+                  "Positioning Statement",
+                  "Brand Personality Mapping",
+                  "Verbal Identity Design",
+                ],
+              },
+              {
+                num: "03",
+                title: "Visual Crystallization",
+                desc: "Concepts are brought to life. We explore multiple directions, refining the one that most authentically represents your vision and strategy.",
+                points: [
+                  "Visual Direction Moodboards",
+                  "Concept Development",
+                  "Refinement Iterations",
+                ],
+              },
+            ].map((phase, idx) => (
+              <div class="flex flex-col md:flex-row gap-16 md:gap-32 items-start">
+                <div class="shrink-0">
+                  <span class="text-6xl md:text-9xl font-display font-medium text-white/5 italic">
+                    {phase.num}
+                  </span>
+                </div>
+                <div class="max-w-2xl">
+                  <h3 class="text-3xl md:text-5xl font-display font-medium mb-8 leading-tight">
+                    {phase.title}
+                  </h3>
+                  <p class="text-white/40 text-lg leading-relaxed mb-12">
+                    {phase.desc}
+                  </p>
+                  <div class="flex flex-wrap gap-4">
+                    {phase.points.map((p) => (
+                      <span class="px-4 py-1.5 rounded-full border border-white/10 text-[10px] font-bold uppercase tracking-widest text-white/20">
+                        {p}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div
+                  class={`hidden md:block absolute right-0 w-1/4 h-px bg-accent/20 translate-y-24 ${idx === 2 ? "opacity-0" : ""}`}
+                />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Art & Strategy: Philosophy -->
+    <section
+      class="py-40 bg-background overflow-hidden selection:bg-white selection:text-black"
+    >
+      <div class="container mx-auto px-6">
+        <div
+          class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16"
+        >
+          <div class="flex-1">
+            <h2
+              class="text-5xl md:text-8xl font-display font-medium leading-[0.9] tracking-tighter mb-16"
+            >
+              Design is <br /><span class="text-white/20">merely the</span>
+              <br /><i>beginning.</i>
+            </h2>
+            <blockquote
+              class="text-2xl md:text-4xl font-display text-white/40 leading-tight"
+            >
+              "A brand is no longer what we tell the consumer it is—it is what
+              consumers tell each other it is."
+            </blockquote>
+            <p
+              class="mt-8 text-accent font-bold uppercase tracking-widest text-xs"
+            >
+              — The Aquorix Philosophy
+            </p>
+          </div>
+          <div class="flex-1 relative">
+            <div
+              class="aspect-[4/5] rounded-4xl overflow-hidden border border-white/5 bg-muted group"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200"
+                alt="Design Philosophy"
+                class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-[3s]"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section: Impactful Final Note -->
+    <section class="py-40 border-t border-white/5">
+      <div class="container mx-auto px-6">
+        <div
+          class="bg-accent p-12 md:p-32 rounded-[4rem] text-background text-center relative overflow-hidden group"
         >
           <div class="relative z-10">
+            <p
+              class="text-[10px] font-bold uppercase tracking-[0.4em] mb-12 text-background/60"
+            >
+              Ready to begin?
+            </p>
             <h2
-              class="text-5xl md:text-8xl font-display font-medium tracking-tighter mb-12 leading-[0.9]"
+              class="text-5xl md:text-9xl font-display font-medium tracking-tighter mb-20 leading-[0.8]"
             >
-              Let's make <br />
-              <i>your brand</i> iconic.
+              Define your <br />
+              <i>legacy.</i>
             </h2>
-            <a
-              href="/#contact"
-              class="inline-flex h-16 items-center justify-center px-12 rounded-full bg-background text-accent font-black text-sm uppercase tracking-widest hover:scale-105 transition-transform"
+            <div
+              class="flex flex-col md:flex-row items-center justify-center gap-8"
             >
-              Start Project
-            </a>
+              <a
+                href="/#contact"
+                class="w-full md:w-auto inline-flex h-20 items-center justify-center px-16 rounded-full bg-background text-accent font-black text-sm uppercase tracking-widest hover:scale-105 transition-transform"
+              >
+                Start a Brand Project
+              </a>
+              <a
+                href="#services"
+                class="text-xs font-bold uppercase tracking-[0.2em] text-background/60 hover:text-background transition-colors"
+                >View All Capabilities</a
+              >
+            </div>
           </div>
-          <!-- Decorative Background Text -->
+          <!-- Motion Background Text -->
           <div
-            class="absolute inset-0 flex items-center justify-center opacity-[0.03] select-none pointer-events-none"
+            class="absolute inset-0 flex items-center justify-center opacity-[0.05] select-none pointer-events-none"
           >
             <span
-              class="text-[30vw] font-display font-black uppercase tracking-tighter"
-              >BRAND</span
+              class="text-[40vw] font-display font-black uppercase tracking-tighter"
+              >ICONIC</span
             >
           </div>
         </div>

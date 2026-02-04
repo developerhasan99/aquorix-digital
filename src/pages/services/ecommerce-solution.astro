@@ -6,89 +6,87 @@ import Footer from "../../components/Footer.astro";
 
 <Layout title="Ecommerce Solution | Aquorix.digital">
   <Navbar />
-  <main>
-    <!-- Hero Section -->
+  <main class="bg-background selection:bg-accent selection:text-background">
+    <!-- Hero Section: Infrastructural Scale -->
     <section
-      class="min-h-screen flex items-center pt-32 pb-20 relative overflow-hidden bg-background"
+      class="min-h-screen flex items-center pt-40 pb-24 relative overflow-hidden border-b border-white/5"
     >
       <div class="container mx-auto px-6 relative z-10">
-        <div class="max-w-5xl">
-          <div
-            class="inline-flex items-center gap-2 px-3 py-1 mb-10 bg-accent/10 rounded-full border border-accent/20"
-          >
-            <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-            <span
-              class="text-[9px] uppercase tracking-widest font-bold text-accent"
-              >Growth Service</span
+        <div
+          class="flex flex-col md:flex-row justify-between items-start md:items-end gap-16"
+        >
+          <div class="max-w-5xl">
+            <div
+              class="inline-flex items-center gap-3 px-3 py-1 mb-10 bg-accent/10 rounded-full border border-accent/20"
             >
+              <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"
+              ></span>
+              <span
+                class="text-[9px] uppercase tracking-widest font-bold text-accent"
+                >Commerce Infrastructure</span
+              >
+            </div>
+            <h1
+              class="text-7xl md:text-[11.5rem] font-display font-medium leading-[0.8] tracking-tighter mb-12"
+            >
+              Scalable <br />
+              <span class="text-white/20">Digital</span>
+              <br />
+              <span class="italic text-white">Commerce.</span>
+            </h1>
           </div>
-          <h1
-            class="text-6xl md:text-[10rem] font-display font-medium leading-[0.85] tracking-tighter mb-12"
-          >
-            Scalable <br />
-            <span class="text-white/20">digital</span>
-            <br />
-            <span class="italic font-display">commerce.</span>
-          </h1>
-          <p
-            class="text-xl md:text-3xl text-white/40 leading-relaxed font-sans max-w-2xl"
-          >
-            We build high-octane online stores that handle millions in revenue.
-            Secure, blazing fast, and engineered for global scale.
-          </p>
+          <div class="max-w-xs md:mb-12">
+            <p
+              class="text-base md:text-lg text-white/40 leading-relaxed font-sans border-l border-accent/30 pl-8"
+            >
+              We build high-octane commerce engines designed for global scale,
+              secure transactions, and seamless operations.
+            </p>
+          </div>
         </div>
       </div>
 
-      <!-- Tech Grid Background -->
+      <!-- Tech Grid Background Detail -->
       <div
-        class="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-accent/3 to-transparent pointer-events-none"
+        class="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-accent/[0.02] to-transparent pointer-events-none"
       >
       </div>
     </section>
 
-    <!-- Architecture Section -->
-    <section class="py-32 bg-muted/10 border-y border-white/5">
+    <!-- Commerce Core: Strategic Pillars -->
+    <section class="py-32 border-b border-white/5 bg-muted/5">
       <div class="container mx-auto px-6">
-        <div class="max-w-xl mb-24">
-          <p
-            class="text-accent text-xs font-bold uppercase tracking-[0.2em] mb-6"
-          >
-            The Architecture
-          </p>
-          <h2
-            class="text-4xl md:text-6xl font-display font-medium leading-tight mb-8"
-          >
-            Performance is <br /><span class="text-white/40"
-              >the ultimate luxury.</span
-            >
-          </h2>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 border border-white/5"
+        >
           {
             [
               {
-                title: "Custom Shopfronts",
-                desc: "Moving away from boring themes to create unique brand experiences that don't compromise on speed.",
+                title: "Global Scale",
+                desc: "Infrastructure built to handle millions in revenue and sudden traffic spikes without compromise.",
+                label: "The Engine",
               },
               {
-                title: "Seamless Payments",
-                desc: "Integrating global payment gateways including Stripe, PayPal, and crypto for a frictionless checkout.",
+                title: "Checkout Mastery",
+                desc: "Optimized, frictionless payment journeys that minimize cart abandonment and maximize trust.",
+                label: "The Flow",
               },
               {
-                title: "Inventory Mastery",
-                desc: "Complex warehouse and ERP integrations to keep your operations running smooth across all channels.",
+                title: "API Ecosystem",
+                desc: "Seamless integrations with CRMs, ERPs, and logistics providers for automated business growth.",
+                label: "The System",
               },
-              {
-                title: "Enterprise Scaling",
-                desc: "Ensuring your site stays online and fast during massive traffic spikes and product drops.",
-              },
-            ].map((item) => (
-              <div class="p-12 border border-white/5 rounded-4xl bg-background hover:border-accent/40 transition-colors">
-                <h4 class="text-2xl font-display font-medium mb-4">
-                  {item.title}
-                </h4>
-                <p class="text-white/40 leading-relaxed text-sm">{item.desc}</p>
+            ].map((pillar) => (
+              <div class="bg-background p-12 md:p-16 hover:bg-muted/10 transition-colors group">
+                <span class="text-[10px] uppercase tracking-[0.3em] font-bold text-accent/40 mb-10 block group-hover:text-accent transition-colors">
+                  {pillar.label}
+                </span>
+                <h3 class="text-3xl font-display font-medium mb-8 leading-none tracking-tight">
+                  {pillar.title}
+                </h3>
+                <p class="text-white/40 leading-relaxed text-sm">
+                  {pillar.desc}
+                </p>
               </div>
             ))
           }
@@ -96,34 +94,207 @@ import Footer from "../../components/Footer.astro";
       </div>
     </section>
 
-    <!-- Visual Divider -->
-    <div
-      class="h-px w-full bg-linear-to-r from-transparent via-accent/30 to-transparent"
-    >
-    </div>
-
-    <!-- CTA Section -->
-    <section class="py-40 relative overflow-hidden">
+    <!-- Commerce Tech: Deliverables Grid -->
+    <section class="py-32 bg-background">
       <div class="container mx-auto px-6">
-        <div class="max-w-4xl mx-auto text-center relative z-10">
-          <h2
-            class="text-5xl md:text-[10rem] font-display font-medium tracking-tighter mb-16 leading-[0.8]"
-          >
-            Built to <span class="italic text-white">grow</span> with <i>you.</i
+        <div
+          class="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-12"
+        >
+          <div class="max-w-2xl">
+            <p
+              class="text-accent text-xs font-bold uppercase tracking-[0.2em] mb-6"
             >
-          </h2>
-          <a
-            href="/#contact"
-            class="inline-flex h-20 items-center justify-center px-16 rounded-full bg-accent text-background font-black text-sm uppercase tracking-widest hover:scale-105 transition-transform"
-          >
-            Start Your Store
-          </a>
+              Commerce Architecture
+            </p>
+            <h2
+              class="text-5xl md:text-8xl font-display font-medium leading-[0.9] tracking-tighter"
+            >
+              Bespoke <br /><span class="text-white/20">marketplaces.</span>
+            </h2>
+          </div>
+          <p class="text-white/40 max-w-xs text-sm leading-relaxed">
+            Highly specialized commerce solutions tailored to your unique
+            operational requirements.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {
+            [
+              {
+                title: "Custom Stores",
+                desc: "Move away from generic templates to unique, high-end shopping experiences.",
+                icon: "M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z",
+              },
+              {
+                title: "Global Payments",
+                desc: "Stripe, PayPal, and crypto integrations for frictionless global transacting.",
+                icon: "M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z",
+              },
+              {
+                title: "Security API",
+                desc: "Enterprise-grade security and fraud protection at every step.",
+                icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z",
+              },
+              {
+                title: "Logistics Master",
+                desc: "Automated inventory management and shipping carrier integrations.",
+                icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4",
+              },
+            ].map((item) => (
+              <div class="p-10 rounded-3xl bg-muted/10 border border-white/5 hover:border-accent/40 transition-all duration-500 group">
+                <div class="w-12 h-12 rounded-2xl bg-accent/5 flex items-center justify-center mb-10 group-hover:bg-accent transition-all duration-500">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    class="text-accent group-hover:text-background transition-colors"
+                  >
+                    <path
+                      d={item.icon}
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <h4 class="text-xl font-display font-medium mb-4">
+                  {item.title}
+                </h4>
+                <p class="text-white/30 text-xs leading-relaxed">{item.desc}</p>
+              </div>
+            ))
+          }
         </div>
       </div>
-      <!-- Decorative Element -->
-      <div
-        class="absolute -bottom-1/2 left-1/2 -translate-x-1/2 w-full h-[500px] bg-accent/5 blur-[150px] rounded-full"
-      >
+    </section>
+
+    <!-- Commerce Journey: Architectural Flow -->
+    <section class="py-32 border-t border-white/5 bg-muted/5 relative">
+      <div class="container mx-auto px-6">
+        <div class="max-w-xl mb-32">
+          <p
+            class="text-accent text-xs font-bold uppercase tracking-[0.2em] mb-6"
+          >
+            Engineered Growth
+          </p>
+          <h2
+            class="text-5xl md:text-7xl font-display font-medium leading-[0.9] tracking-tighter"
+          >
+            Powered <br /><span class="text-white/20">for success.</span>
+          </h2>
+        </div>
+
+        <div class="space-y-32">
+          {
+            [
+              {
+                num: "01",
+                title: "Infrastructural Audit",
+                desc: "We analyze your current logistics, product data, and scaling requirements to build the ultimate commerce foundation.",
+                points: [
+                  "Data Migration",
+                  "Integration Blueprint",
+                  "Scalability Mapping",
+                ],
+              },
+              {
+                num: "02",
+                title: "High-Octane Build",
+                desc: "Developing a custom commerce engine that prioritizes transactional security and blazing fast performance.",
+                points: [
+                  "Custom Shopfront",
+                  "Secure Payments",
+                  "Operational Automation",
+                ],
+              },
+              {
+                num: "03",
+                title: "Scaling & Support",
+                desc: "Continuous monitoring and architectural support to ensure your store scales seamlessly with your business growth.",
+                points: [
+                  "Load Testing",
+                  "Security Hardening",
+                  "Expansion Planning",
+                ],
+              },
+            ].map((phase, idx) => (
+              <div class="flex flex-col md:flex-row gap-16 md:gap-32 items-start">
+                <div class="shrink-0">
+                  <span class="text-6xl md:text-9xl font-display font-medium text-white/5 italic">
+                    {phase.num}
+                  </span>
+                </div>
+                <div class="max-w-2xl">
+                  <h3 class="text-3xl md:text-5xl font-display font-medium mb-8 leading-tight">
+                    {phase.title}
+                  </h3>
+                  <p class="text-white/40 text-lg leading-relaxed mb-12">
+                    {phase.desc}
+                  </p>
+                  <div class="flex flex-wrap gap-4">
+                    {phase.points.map((p) => (
+                      <span class="px-4 py-1.5 rounded-full border border-white/10 text-[10px] font-bold uppercase tracking-widest text-white/20">
+                        {p}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div
+                  class={`hidden md:block absolute right-0 w-1/4 h-px bg-accent/20 translate-y-24 ${idx === 2 ? "opacity-0" : ""}`}
+                />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-40 border-t border-white/5">
+      <div class="container mx-auto px-6">
+        <div
+          class="bg-accent p-12 md:p-32 rounded-[4rem] text-background text-center relative overflow-hidden group"
+        >
+          <div class="relative z-10">
+            <p
+              class="text-[10px] font-bold uppercase tracking-[0.4em] mb-12 text-background/60"
+            >
+              Ready to sell?
+            </p>
+            <h2
+              class="text-5xl md:text-9xl font-display font-medium tracking-tighter mb-20 leading-[0.8]"
+            >
+              Build your <br />
+              <i>empire.</i>
+            </h2>
+            <div
+              class="flex flex-col md:flex-row items-center justify-center gap-8"
+            >
+              <a
+                href="/#contact"
+                class="w-full md:w-auto inline-flex h-20 items-center justify-center px-16 rounded-full bg-background text-accent font-black text-sm uppercase tracking-widest hover:scale-105 transition-transform"
+              >
+                Start Your Store
+              </a>
+              <a
+                href="#services"
+                class="text-xs font-bold uppercase tracking-[0.2em] text-background/60 hover:text-background transition-colors"
+                >View All Capabilities</a
+              >
+            </div>
+          </div>
+          <div
+            class="absolute inset-0 flex items-center justify-center opacity-[0.05] select-none pointer-events-none"
+          >
+            <span
+              class="text-[40vw] font-display font-black uppercase tracking-tighter"
+              >STORE</span
+            >
+          </div>
+        </div>
       </div>
     </section>
   </main>
