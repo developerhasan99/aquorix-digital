@@ -1,0 +1,250 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import CTA from "../components/CTA.astro";
+
+import mehediImg from "../assets/mehedi-hasan.jpg";
+import arifulImg from "../assets/ariful-shikdar.jpeg";
+import karimaImg from "../assets/karima.png";
+import najmulImg from "../assets/najmul.png";
+import { Image } from "astro:assets";
+
+const team = [
+  {
+    name: "Mehedi Hasan",
+    role: "Full Stack Developer",
+    image: mehediImg,
+  },
+  {
+    name: "Ariful Shikdar",
+    role: "Laravel Developer",
+    image: arifulImg,
+  },
+  {
+    name: "Karima Khatun",
+    role: "E-commerce Specialist",
+    image: karimaImg,
+  },
+  {
+    name: "Najmul Islam",
+    role: "CRM Specialist",
+    image: najmulImg,
+  },
+];
+---
+
+<Layout title="About Us | Aquorix.digital">
+  <Navbar />
+  <main
+    class="bg-background selection:bg-accent selection:text-background font-sans pt-28 md:pt-32"
+  >
+    <!-- Hero Header (Blog Style) -->
+    <header class="py-12 mb-12">
+      <div class="max-w-6xl mx-auto px-6">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-12"
+        >
+          <div class="max-w-3xl">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 mb-8 bg-accent/10 rounded-full border border-accent/20"
+            >
+              <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"
+              ></span>
+              <span
+                class="text-[9px] uppercase tracking-widest font-bold text-accent"
+                >Journal</span
+              >
+            </div>
+            <h1
+              class="text-6xl md:text-7xl font-display font-medium leading-tight tracking-tighter mb-12"
+            >
+              Architects of <br />
+              <span class="text-white/20">digital</span>
+              <span class="italic font-display text-white">&</span>
+              <span class="text-white/20">impact.</span>
+            </h1>
+          </div>
+          <div class="max-w-xs md:mt-24">
+            <p
+              class="text-sm md:text-lg text-white/40 leading-relaxed font-sans border-l border-accent/30 pl-8"
+            >
+              We are a collective of strategic designers and technical
+              architects dedicated to building digital experiences that
+              transcend the ordinary.
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Core Values Grid (Same style as Branding Pillars) -->
+    <section class="pb-32">
+      <div class="max-w-6xl mx-auto px-6">
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 border border-white/5"
+        >
+          {
+            [
+              {
+                title: "Architectural Clarity",
+                desc: "We prioritize structure and hierarchy, ensuring users navigate your digital ecosystem with effortless intuition.",
+                label: "01",
+              },
+              {
+                title: "Strategic Depth",
+                desc: "Our design decisions are rooted in data and human psychology, not just fleeting trends or subjective surface beauty.",
+                label: "02",
+              },
+              {
+                title: "Fluid Innovation",
+                desc: "We constantly evolve our methodologies to leverage the latest in technical capabilities and creative possibilities.",
+                label: "03",
+              },
+            ].map((value) => (
+              <div class="bg-background p-12 md:p-16 hover:bg-muted/10 transition-colors group">
+                <span class="text-[10px] uppercase tracking-[0.3em] font-bold text-accent/40 mb-10 block group-hover:text-accent transition-colors">
+                  {value.label}
+                </span>
+                <h3 class="text-3xl font-display font-medium mb-8 leading-none tracking-tight">
+                  {value.title}
+                </h3>
+                <p class="text-white/40 leading-relaxed text-sm">
+                  {value.desc}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Philosophy -->
+    <section class="py-32 border-b border-muted/5 bg-muted/5">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-14 items-start">
+          <div class="space-y-8">
+            <p class="text-accent text-xs font-bold uppercase tracking-[0.2em]">
+              The Purpose
+            </p>
+            <h2
+              class="text-5xl md:text-7xl font-display font-medium leading-none tracking-tighter mb-12"
+            >
+              Beyond design. <br />
+              <span class="text-white/20">Strategic impact.</span>
+            </h2>
+            <p class="text-white/40 text-lg leading-relaxed max-w-lg">
+              At Aquorix, we believe that digital excellence isn't just about
+              aesthetic beauty—it's about structural integrity, strategic
+              intent, and measurable impact.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 gap-12">
+            <div>
+              <h3 class="text-xl font-display font-medium mb-4 text-white">
+                Precision Over Noise
+              </h3>
+              <p class="text-white/40 text-sm leading-relaxed">
+                In a world of digital clutter, we choose intentionality. Every
+                element we craft serves a strategic function, ensuring your
+                brand message is heard with clarity.
+              </p>
+            </div>
+            <div class="w-full h-px bg-white/5"></div>
+            <div>
+              <h3 class="text-xl font-display font-medium mb-4 text-white">
+                Technical Artistry
+              </h3>
+              <p class="text-white/40 text-sm leading-relaxed">
+                We bridge the gap between creative vision and technical
+                execution. Our solutions are built to be as robust as they are
+                beautiful.
+              </p>
+            </div>
+            <div class="w-full h-px bg-white/5"></div>
+            <div>
+              <h3 class="text-xl font-display font-medium mb-4 text-white">
+                Future-Proof Growth
+              </h3>
+              <p class="text-white/40 text-sm leading-relaxed">
+                We don't build for today; we architect for tomorrow. Our systems
+                are designed to scale alongside your ambition.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Collective / Team Section -->
+    <section class="py-32 bg-background">
+      <div class="max-w-6xl mx-auto px-6">
+        <div
+          class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8"
+        >
+          <div class="max-w-xl">
+            <p
+              class="text-accent text-xs font-bold uppercase tracking-[0.2em] mb-6"
+            >
+              The Collective
+            </p>
+            <h2
+              class="text-5xl md:text-7xl font-display font-medium leading-[0.9] tracking-tighter"
+            >
+              The architects <br /><span class="text-white/20"
+                >of your vision.</span
+              >
+            </h2>
+          </div>
+          <p class="text-white/40 max-w-xs text-sm leading-relaxed">
+            A diverse group of strategists, designers, and developers united by
+            a shared obsession with digital excellence.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {
+            team.map((member) => (
+              <div class="group cursor-pointer">
+                <div class="relative aspect-square overflow-hidden mb-8">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                  />
+                  <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                </div>
+                <h3 class="text-2xl font-display font-medium text-white mb-2 tracking-tight group-hover:text-accent transition-colors">
+                  {member.name}
+                </h3>
+                <p class="text-xs uppercase tracking-widest font-bold text-white/30 group-hover:text-white transition-colors">
+                  {member.role}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual Divider -->
+    <section class="h-[40vh] md:h-[60vh] relative overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1600"
+        alt="Studio Space"
+        class="w-full h-full object-cover grayscale opacity-30"
+      />
+      <div
+        class="absolute inset-0 bg-linear-to-b from-background via-transparent to-background"
+      >
+      </div>
+    </section>
+
+    <CTA
+      tagline="Join our journey"
+      heading={`Let's build <br /> <span class="text-white/40 italic">the future together.</span>`}
+    />
+  </main>
+  <Footer />
+</Layout>
