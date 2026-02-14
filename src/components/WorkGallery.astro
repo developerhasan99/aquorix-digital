@@ -1,0 +1,113 @@
+---
+const works = [
+  {
+    image:
+      "https://cdn-ildoepe.nitrocdn.com/GIXZLtSStuyLdituDqVGUCgQekMDtgHB/assets/images/optimized/rev-c28ceeb/www.bikebear.com.my/wp-content/uploads/2022/12/Screenshot-2022-12-15-at-3.10.22-PM.png",
+    class: "top-[5%] left-[5%] z-10 size-48 md:size-72",
+  },
+  {
+    image:
+      "https://cdn-ildoepe.nitrocdn.com/GIXZLtSStuyLdituDqVGUCgQekMDtgHB/assets/images/optimized/rev-c28ceeb/www.bikebear.com.my/wp-content/uploads/2023/01/brand-cardinal-img.jpg",
+    class: "top-[10%] left-[15%] z-10 size-48 md:size-64",
+  },
+  {
+    image:
+      "https://cdn-ildoepe.nitrocdn.com/GIXZLtSStuyLdituDqVGUCgQekMDtgHB/assets/images/optimized/rev-c28ceeb/www.bikebear.com.my/wp-content/uploads/2023/01/brand-giveco-img.jpg",
+    class: "top-[15%] left-[30%] z-20 size-40 md:size-64",
+  },
+  {
+    image:
+      "https://cdn-ildoepe.nitrocdn.com/GIXZLtSStuyLdituDqVGUCgQekMDtgHB/assets/images/optimized/rev-c28ceeb/www.bikebear.com.my/wp-content/uploads/2023/01/brand-vippass-img.jpg",
+    class: "top-[0%] right-[10%] z-10 size-56 md:size-80",
+  },
+  {
+    image:
+      "https://cdn-ildoepe.nitrocdn.com/GIXZLtSStuyLdituDqVGUCgQekMDtgHB/assets/images/optimized/rev-c28ceeb/www.bikebear.com.my/wp-content/uploads/2022/12/Group-56130.svg",
+    class: "top-[40%] left-[10%] z-30 size-44 md:size-72",
+  },
+  {
+    image:
+      "https://cdn-ildoepe.nitrocdn.com/GIXZLtSStuyLdituDqVGUCgQekMDtgHB/assets/images/optimized/rev-c28ceeb/www.bikebear.com.my/wp-content/uploads/2023/01/brand-fourgolf-img.jpg",
+    class: "top-[35%] left-[45%] z-20 size-52 md:size-80",
+  },
+  {
+    image:
+      "https://cdn-ildoepe.nitrocdn.com/GIXZLtSStuyLdituDqVGUCgQekMDtgHB/assets/images/optimized/rev-c28ceeb/www.bikebear.com.my/wp-content/uploads/2023/01/brand-kit-img.jpg",
+    class: "top-[45%] right-[5%] z-30 size-40 md:size-64",
+  },
+  {
+    image:
+      "https://cdn-ildoepe.nitrocdn.com/GIXZLtSStuyLdituDqVGUCgQekMDtgHB/assets/images/optimized/rev-c28ceeb/www.bikebear.com.my/wp-content/uploads/2023/01/brand-blastro-img.jpg",
+    class: "bottom-[5%] left-[25%] z-40 size-48 md:size-72",
+  },
+  {
+    image:
+      "https://cdn-ildoepe.nitrocdn.com/GIXZLtSStuyLdituDqVGUCgQekMDtgHB/assets/images/optimized/rev-c28ceeb/www.bikebear.com.my/wp-content/uploads/2023/01/brand-deeno-img.jpg",
+    class: "bottom-[10%] right-[20%] z-10 size-56 md:size-80",
+  },
+];
+---
+
+<section
+  class="bg-background overflow-hidden relative min-h-[700px] md:min-h-[1000px] flex items-center justify-center"
+>
+  <!-- Interactive Collage Container -->
+  <div class="relative w-full max-w-7xl mx-auto h-full">
+    {
+      works.map((work) => (
+        <div
+          class={`absolute transition-all duration-700 ease-out group cursor-pointer ${work.class}`}
+        >
+          <div class="relative w-full h-full overflow-hidden transition-all duration-700">
+            <img
+              src={work.image}
+              alt="Work Showcase"
+              loading="lazy"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      ))
+    }
+
+    <!-- Static Center Content -->
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-0 pointer-events-none opacity-20 hidden md:block"
+    >
+      <h2
+        class="text-[15vw] font-display font-black uppercase tracking-tighter text-white/5 leading-none"
+      >
+        ARCHIVE
+      </h2>
+    </div>
+  </div>
+
+  <style>
+    @media (max-width: 640px) {
+      section {
+        min-height: auto;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+      }
+      .relative.w-full.max-w-7xl {
+        display: grid;
+        grid-template-cols: repeat(2, 1fr);
+        gap: 1rem;
+        position: relative;
+        height: auto;
+        padding: 0 1.5rem;
+      }
+      .absolute {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 1;
+      }
+    }
+  </style>
+</section>

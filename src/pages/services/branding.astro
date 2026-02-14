@@ -3,6 +3,8 @@ import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
 import ServiceHero from "../../components/ServiceHero.astro";
+import CTA from "../../components/CTA.astro";
+import WorkGallery from "../../components/WorkGallery.astro";
 ---
 
 <Layout title="Branding | Aquorix.digital">
@@ -213,94 +215,12 @@ import ServiceHero from "../../components/ServiceHero.astro";
       </div>
     </section>
 
-    <!-- Art & Strategy: Philosophy -->
-    <section
-      class="py-40 bg-background overflow-hidden selection:bg-white selection:text-black"
-    >
-      <div class="max-w-6xl mx-auto px-6">
-        <div
-          class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16"
-        >
-          <div class="flex-1">
-            <h2
-              class="text-5xl md:text-7xl font-display font-medium leading-[0.9] tracking-tighter"
-            >
-              Design is <br /><span class="text-white/20">merely the</span>
-              <br /><i>beginning.</i>
-            </h2>
-            <blockquote
-              class="text-2xl md:text-4xl font-display text-white/40 leading-tight"
-            >
-              "A brand is no longer what we tell the consumer it is—it is what
-              consumers tell each other it is."
-            </blockquote>
-            <p
-              class="mt-8 text-accent font-bold uppercase tracking-widest text-xs"
-            >
-              — The Aquorix Philosophy
-            </p>
-          </div>
-          <div class="flex-1 relative">
-            <div
-              class="aspect-[4/5] rounded-4xl overflow-hidden border border-white/5 bg-muted group"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200"
-                alt="Design Philosophy"
-                class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-[3s]"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <WorkGallery />
 
-    <!-- CTA Section: Impactful Final Note -->
-    <section class="py-40 border-t border-white/5">
-      <div class="max-w-6xl mx-auto px-6">
-        <div
-          class="bg-accent p-12 md:p-32 rounded-[4rem] text-background text-center relative overflow-hidden group"
-        >
-          <div class="relative z-10">
-            <p
-              class="text-[10px] font-bold uppercase tracking-[0.4em] mb-12 text-background/60"
-            >
-              Ready to begin?
-            </p>
-            <h2
-              class="text-5xl md:text-9xl font-display font-medium tracking-tighter mb-20 leading-[0.8]"
-            >
-              Define your <br />
-              <i>legacy.</i>
-            </h2>
-            <div
-              class="flex flex-col md:flex-row items-center justify-center gap-8"
-            >
-              <a
-                href="/#contact"
-                class="w-full md:w-auto inline-flex h-20 items-center justify-center px-16 rounded-full bg-background text-accent font-black text-sm uppercase tracking-widest hover:scale-105 transition-transform"
-              >
-                Start a Brand Project
-              </a>
-              <a
-                href="#services"
-                class="text-xs font-bold uppercase tracking-[0.2em] text-background/60 hover:text-background transition-colors"
-                >View All Capabilities</a
-              >
-            </div>
-          </div>
-          <!-- Motion Background Text -->
-          <div
-            class="absolute inset-0 flex items-center justify-center opacity-[0.05] select-none pointer-events-none"
-          >
-            <span
-              class="text-[40vw] font-display font-black uppercase tracking-tighter"
-              >ICONIC</span
-            >
-          </div>
-        </div>
-      </div>
-    </section>
+    <CTA
+      tagline="Start a conversation"
+      heading={`Let's create <br /> <span class="text-white/40 italic">something impactful.</span>`}
+    />
   </main>
   <Footer />
 </Layout>
