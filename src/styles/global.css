@@ -31,7 +31,7 @@
 }
 
 .glass-nav {
-  @apply backdrop-blur-xl border border-white/5 bg-background/60;
+  @apply backdrop-blur-xl border border-white/10 bg-background/60;
 }
 
 .text-accent {
