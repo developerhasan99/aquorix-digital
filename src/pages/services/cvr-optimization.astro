@@ -2,61 +2,23 @@
 import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
+import ServiceHero from "../../components/ServiceHero.astro";
+import CTA from "../../components/CTA.astro";
+import WorkGallery from "../../components/WorkGallery.astro";
 ---
 
 <Layout title="CVR Optimization | Aquorix.digital">
   <Navbar />
   <main class="bg-background selection:bg-accent selection:text-background">
-    <!-- Hero Section: Architectural & Immersive -->
-    <section
-      class="min-h-screen flex items-center pt-40 pb-24 relative overflow-hidden border-b border-white/5"
-    >
-      <div class="max-w-6xl mx-auto px-6 relative z-10">
-        <div
-          class="flex flex-col md:flex-row justify-between items-start md:items-end gap-16"
-        >
-          <div class="max-w-5xl">
-            <div
-              class="inline-flex items-center gap-3 px-3 py-1 mb-10 bg-accent/10 rounded-full border border-accent/20"
-            >
-              <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"
-              ></span>
-              <span
-                class="text-[9px] uppercase tracking-widest font-bold text-accent"
-                >Performance Optimization</span
-              >
-            </div>
-            <h1
-              class="text-7xl md:text-[11.5rem] font-display font-medium leading-[0.8] tracking-tighter mb-12"
-            >
-              The Science <br />
-              <span class="text-white/20">of Digital</span>
-              <br />
-              <span class="italic text-white">Growth.</span>
-            </h1>
-          </div>
-          <div class="max-w-xs md:mb-12">
-            <p
-              class="text-base md:text-lg text-white/40 leading-relaxed font-sans border-l border-accent/30 pl-8"
-            >
-              We don't guess. We analyze, test, and optimize. Our data-driven
+    <ServiceHero
+      tagline="Performance Optimization"
+      heading={`The Science <span class="italic text-white"> of Digital</span> <span class="text-white/20">Growth.</span>`}
+      description="We don't guess. We analyze, test, and optimize. Our data-driven
               methodology turns your existing traffic into a high-converting
-              revenue engine.
-            </p>
-          </div>
-        </div>
-      </div>
+              revenue engine."
+    />
 
-      <!-- Subtle Dynamic Background Detail -->
-      <div class="absolute inset-0 pointer-events-none">
-        <div
-          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vw] bg-[radial-gradient(circle_at_center,rgba(191,255,0,0.02)_0%,transparent_60%)]"
-        >
-        </div>
-      </div>
-    </section>
-
-    <!-- Optimization Pillars: Core Strategy -->
+    <!-- Core Pillars -->
     <section class="py-32 border-b border-white/5 bg-muted/5">
       <div class="max-w-6xl mx-auto px-6">
         <div
@@ -97,7 +59,7 @@ import Footer from "../../components/Footer.astro";
       </div>
     </section>
 
-    <!-- Metrics: Performance Results -->
+    <!-- Visual Language Section: Deliverables Grid -->
     <section class="py-32 bg-background">
       <div class="max-w-6xl mx-auto px-6">
         <div
@@ -110,9 +72,9 @@ import Footer from "../../components/Footer.astro";
               Optimization Results
             </p>
             <h2
-              class="text-5xl md:text-8xl font-display font-medium leading-[0.9] tracking-tighter"
+              class="text-5xl md:text-7xl font-display font-medium leading-[0.9] tracking-tighter"
             >
-              Impact <br /><span class="text-white/20">by the</span> numbers.
+              Impact <br /><span class="text-white/20">by the </span>numbers.
             </h2>
           </div>
           <p class="text-white/40 max-w-xs text-sm leading-relaxed">
@@ -162,7 +124,7 @@ import Footer from "../../components/Footer.astro";
       </div>
     </section>
 
-    <!-- Methodology: The Scientific Flow -->
+    <!-- Detailed Process: Architectural Flow -->
     <section class="py-32 border-t border-white/5 bg-muted/5 relative">
       <div class="max-w-6xl mx-auto px-6">
         <div class="max-w-xl mb-32">
@@ -243,51 +205,12 @@ import Footer from "../../components/Footer.astro";
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-40 border-t border-white/5">
-      <div class="max-w-6xl mx-auto px-6">
-        <div
-          class="bg-accent p-12 md:p-32 rounded-[4rem] text-background text-center relative overflow-hidden group"
-        >
-          <div class="relative z-10">
-            <p
-              class="text-[10px] font-bold uppercase tracking-[0.4em] mb-12 text-background/60"
-            >
-              Ready to scale?
-            </p>
-            <h2
-              class="text-5xl md:text-9xl font-display font-medium tracking-tighter mb-20 leading-[0.8]"
-            >
-              Unlock your <br />
-              <i>revenue.</i>
-            </h2>
-            <div
-              class="flex flex-col md:flex-row items-center justify-center gap-8"
-            >
-              <a
-                href="/#contact"
-                class="w-full md:w-auto inline-flex h-20 items-center justify-center px-16 rounded-full bg-background text-accent font-black text-sm uppercase tracking-widest hover:scale-105 transition-transform"
-              >
-                Get Free Audit
-              </a>
-              <a
-                href="#services"
-                class="text-xs font-bold uppercase tracking-[0.2em] text-background/60 hover:text-background transition-colors"
-                >View All Capabilities</a
-              >
-            </div>
-          </div>
-          <div
-            class="absolute inset-0 flex items-center justify-center opacity-[0.05] select-none pointer-events-none"
-          >
-            <span
-              class="text-[40vw] font-display font-black uppercase tracking-tighter"
-              >GROWTH</span
-            >
-          </div>
-        </div>
-      </div>
-    </section>
+    <WorkGallery />
+
+    <CTA
+      tagline="Ready to scale?"
+      heading={`Unlock your<br /> <span class="text-white/40 italic">revenue.</span> `}
+    />
   </main>
   <Footer />
 </Layout>
